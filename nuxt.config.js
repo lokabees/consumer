@@ -14,7 +14,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: 'Lokabees Dealer',
+    title: 'Lokabees Consumer',
     meta: [
       { charset: 'utf-8' },
       {

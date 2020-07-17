@@ -1,4 +1,4 @@
-# dealer
+# consumer
 
 ## Build Setup
 

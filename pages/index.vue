@@ -2,7 +2,7 @@
   <div class="container">
     <div class="mt-5">
       <h1 class="title">
-        dealer
+        consumer
         <icon name="comments" />
       </h1>
       <div class="">
