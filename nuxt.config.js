@@ -31,10 +31,9 @@ export default {
    */
   publicRuntimeConfig: {
     test: process.env.TEST,
+    mapboxKey: process.env.MAPBOX_KEY,
   },
-  privateRuntimeConfig: {
-    MAPBOX_KEY: process.env.MAPBOX_KEY,
-  },
+  privateRuntimeConfig: {},
   /*
    ** Global CSS
    */
@@ -43,11 +42,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [
-    '~/plugins/modules/i18n',
-    '~/plugins/modules/vue-formulate',
-    { src: '~/plugins/modules/mapbox', mode: 'client' },
-  ],
+  plugins: ['~/plugins/modules/i18n', '~/plugins/modules/vue-formulate'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -110,13 +105,6 @@ export default {
    ** See https://content.nuxtjs.org/configuration
    */
   content: {},
-  /*
-   ** Tailtind configuration
-   ** See https://github.com/nuxt-community/tailwindcss-module
-   */
-  tailwindcss: {
-    // purgeCSSInDev: true,
-  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
