@@ -1,5 +1,10 @@
 export default {
   /*
+   ** Nuxt rendering mode
+   ** See https://nuxtjs.org/api/configuration-mode
+   */
+  mode: 'universal',
+  /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
@@ -30,7 +35,6 @@ export default {
    ** also https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
    */
   publicRuntimeConfig: {
-    test: process.env.TEST,
     mapboxKey: process.env.MAPBOX_KEY,
   },
   privateRuntimeConfig: {},
@@ -68,10 +72,8 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
-    // Doc: https://github.com/Developmint/nuxt-webfontloader#readme
-    'nuxt-webfontloader',
-    // Doc: https://auth.nuxtjs.org/
-    '@nuxtjs/auth',
+    // Doc: https://github.com/nuxt-community/google-fonts-module
+    '@nuxtjs/google-fonts',
   ],
 
   /*
@@ -99,7 +101,12 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    proxy: true,
+  },
+  proxy: {
+    '/api': { target: process.env.API_URL },
+  },
   /*
    ** Content module configuration
    ** See https://content.nuxtjs.org/configuration

@@ -27,11 +27,11 @@ export default {
       exampleShops: [
         {
           _id: '1',
-          name: 'Example Store 1',
+          name: 'Lukas Mauser',
           images: { cover: '/icon.png' },
           description: 'Decription for store 1',
           address: 'address for store 1',
-          slug: 'example-1',
+          slug: 'lukas-mauser',
         },
         {
           _id: '2',
