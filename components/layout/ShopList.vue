@@ -1,6 +1,5 @@
 <template>
   <div class="pt-10">
-    <h2>shop list</h2>
     <!-- search bar -->
     <FormulateInput
       type="text"
@@ -8,7 +7,7 @@
       :placeholder="'PLACEHOLDER'"
       validation="required"
     />
-
+    <!-- shop list -->
     <ShopSearchResult
       v-for="shop in exampleShops"
       :key="shop._id"

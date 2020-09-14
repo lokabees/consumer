@@ -2,8 +2,12 @@
   <div class="container">
     <div class="mt-5">
       <h1 class="title pb-5">{{ $t('landing_page.title') }}</h1>
+      <!--Map component-->
       <div id="map" class="map" />
+      <!--list all shops-->
       <ShopList />
+      <!--about section-->
+      <AboutSection />
     </div>
   </div>
 </template>

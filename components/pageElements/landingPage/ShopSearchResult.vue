@@ -1,15 +1,17 @@
 <template>
   <div @click="$emit('selectShop')">
-    <img :src="shop.images.cover" />
+    <img :src="shop.images.cover" width="150px" />
     <h3>{{ shop.name }}</h3>
     <p>{{ shop.address }}</p>
 
     <div v-if="selected">
       <span> {{ $t('landing_page.shop_list.open_until') }}</span>
       <p>{{ shop.description }}</p>
-      <button>{{ $t('landing_page.shop_list.call') }}</button>
-      <button>{{ $t('landing_page.shop_list.email') }}</button>
-      <button @click="$router.push(`/shops/${shop.slug}`)">
+      <button class="secondary">{{ $t('landing_page.shop_list.call') }}</button>
+      <button class="secondary">
+        {{ $t('landing_page.shop_list.email') }}
+      </button>
+      <button class="primary" @click="$router.push(`/shops/${shop.slug}`)">
         {{ $t('landing_page.shop_list.go_to_store') }}
       </button>
     </div>

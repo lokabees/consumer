@@ -1,5 +1,12 @@
 <template>
-  <div class="">Shop details</div>
+  <div>
+    <div class="">Shop details</div>
+    cover img:
+    <img :src="shop.images.cover" width="150px" />
+    profile img:
+    <img :src="shop.images.profile" width="150px" />
+    <h1>{{ shop.name }}</h1>
+  </div>
 </template>
 
 <script>
@@ -13,7 +20,14 @@ export default {
     } catch (e) {
       console.error(e)
       return {
-        shop: {},
+        shop: {
+          _id: '1',
+          name: 'Lukas Mauser',
+          images: { cover: '/icon.png', profile: '/icon.png' },
+          description: 'Decription for store 1',
+          address: 'address for store 1',
+          slug: 'lukas-mauser',
+        },
       }
     }
   },
