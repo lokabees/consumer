@@ -9,7 +9,9 @@
       <p>{{ shop.description }}</p>
       <button>{{ $t('landing_page.shop_list.call') }}</button>
       <button>{{ $t('landing_page.shop_list.email') }}</button>
-      <button>{{ $t('landing_page.shop_list.go_to_store') }}</button>
+      <button @click="$router.push(`/shops/${shop.slug}`)">
+        {{ $t('landing_page.shop_list.go_to_store') }}
+      </button>
     </div>
   </div>
 </template>
@@ -26,6 +28,7 @@ export default {
           shop.name &&
           shop.description &&
           shop.images &&
+          shop.slug &&
           shop.address
         )
       },

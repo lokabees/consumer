@@ -31,6 +31,7 @@ export default {
           images: { cover: '/icon.png' },
           description: 'Decription for store 1',
           address: 'address for store 1',
+          slug: 'example-1',
         },
         {
           _id: '2',
@@ -38,6 +39,7 @@ export default {
           images: { cover: '/icon.png' },
           description: 'Decription for store 2',
           address: 'Address for store 2',
+          slug: 'example-2',
         },
       ],
     }
