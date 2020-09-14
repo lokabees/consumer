@@ -5,13 +5,15 @@
         consumer
         <icon name="comments" />
       </h1>
-      <div class="">
-        MAP
-      </div>
+      <div class="">MAP</div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  mounted() {
+    console.log(this.$config.test)
+  },
+}
 </script>

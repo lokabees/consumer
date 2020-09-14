@@ -1,10 +1,5 @@
 export default {
   /*
-   ** Nuxt rendering mode
-   ** See https://nuxtjs.org/api/configuration-mode
-   */
-  mode: 'universal',
-  /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
@@ -28,6 +23,14 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+  /*
+   ** The env Property
+   ** See https://nuxtjs.org/api/configuration-env/
+   ** also https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
+   */
+  publicRuntimeConfig: {
+    test: process.env.TEST,
   },
   /*
    ** Global CSS

@@ -7,9 +7,7 @@
       >
         <div class="container navigation">
           <div class="brand">
-            <n-link to="/" class="text-black" exact>
-              lokabees
-            </n-link>
+            <n-link to="/" class="text-black" exact> lokabees </n-link>
           </div>
           <!--
           <div class="ml-3">
@@ -30,9 +28,7 @@
           <div class="ml-auto">
             <ul>
               <li>
-                <n-link to="/account/login">
-                  Login
-                </n-link>
+                <n-link to="/account/login"> Login </n-link>
               </li>
             </ul>
           </div>
