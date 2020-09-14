@@ -53,7 +53,7 @@ export default {
     getIcon(name) {
       if (name) {
         try {
-          return require('vue-unicons/src/icons')[name].path
+          return require('eva-icons/eva').icons[name]?.contents
         } catch (e) {
           console.log(e)
           // Todo: Bind error handler

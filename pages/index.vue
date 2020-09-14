@@ -5,7 +5,7 @@
         consumer
         <icon name="comments" />
       </h1>
-      <div class="">MAP</div>
+      <div id="map" ref="map">MAP</div>
     </div>
   </div>
 </template>

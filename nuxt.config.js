@@ -32,6 +32,9 @@ export default {
   publicRuntimeConfig: {
     test: process.env.TEST,
   },
+  privateRuntimeConfig: {
+    MAPBOX_KEY: process.env.MAPBOX_KEY,
+  },
   /*
    ** Global CSS
    */
@@ -40,7 +43,11 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ['~/plugins/modules/i18n', '~/plugins/vue-formulate'],
+  plugins: [
+    '~/plugins/modules/i18n',
+    '~/plugins/modules/vue-formulate',
+    { src: '~/plugins/modules/mapbox', mode: 'client' },
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -73,18 +80,15 @@ export default {
   ],
 
   /*
-   ** Webfontloader
-   ** See https://www.npmjs.com/package/webfontloader
+   ** google fonts module configuration
+   ** See https://github.com/nuxt-community/google-fonts-module#options
+   ** Todo: @lukas - Set specific font weights if purgecss not active - test it
+   ** also specific subset
    */
-  webfontloader: {
-    custom: {
-      families: ['Montserrat:n4,n6,n7', ' :n4,n7'],
-      urls: [
-        // for each Google Fonts add url + options you want
-        // here add font-display option
-        'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap',
-        'https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap',
-      ],
+  googleFonts: {
+    families: {
+      Merriweather: true,
+      Montserrat: true,
     },
   },
   /*
@@ -106,16 +110,6 @@ export default {
    ** See https://content.nuxtjs.org/configuration
    */
   content: {},
-  /**
-   ** PurgeCSS configuration
-   */
-  purgeCSS: {
-    whitelistPatterns: [
-      /-(leave|enter|appear)(|-(to|from|active))$/,
-      /^(?!(|.*?:)cursor-move).+-move$/,
-      /^nuxt-link(|-exact)-active$/,
-    ],
-  },
   /*
    ** Tailtind configuration
    ** See https://github.com/nuxt-community/tailwindcss-module
