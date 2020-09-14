@@ -11,8 +11,10 @@
 
     <ShopSearchResult
       v-for="shop in exampleShops"
-      :key="shop.name"
+      :key="shop._id"
       :shop="shop"
+      :selected="shop._id === selectedShop"
+      @selectShop="selectedShop = shop._id"
     />
   </div>
 </template>
@@ -21,16 +23,21 @@
 export default {
   data() {
     return {
+      selectedShop: '',
       exampleShops: [
         {
-          name: '123',
+          _id: '1',
+          name: 'Example Store 1',
           images: { cover: '/icon.png' },
-          address: 'Hallo',
+          description: 'Decription for store 1',
+          address: 'address for store 1',
         },
         {
-          name: '345',
+          _id: '2',
+          name: 'Example Store 2',
           images: { cover: '/icon.png' },
-          address: 'Hallo',
+          description: 'Decription for store 2',
+          address: 'Address for store 2',
         },
       ],
     }

@@ -1,5 +1,11 @@
 {
   "landing_page": {
-    "title": "Find local products from retailers near you!"
+    "title": "Find local products from retailers near you!",
+    "shop_list": {
+      "open_until": "Open until",
+      "call": "Call",
+      "email": "E-Mail",
+      "go_to_store": "Go to store"
+    }
   }
 }
