@@ -37,7 +37,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ['~/plugins/vue-formulate'],
+  plugins: ['~/plugins/modules/i18n', '~/plugins/vue-formulate'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components

@@ -6,7 +6,7 @@
         <icon name="comments" />
       </h1>
       <div class="">
-        asdasd
+        MAP
       </div>
     </div>
   </div>
