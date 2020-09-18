@@ -14,5 +14,13 @@
   },
   "navbar": {
     "login": "Login"
+  },
+  "footer": {
+    "links": {
+      "privacy": "Privacy Policy",
+      "imprint": "Imprint",
+      "terms": "Terms of Use",
+      "contact": "Contact"
+    }
   }
 }
