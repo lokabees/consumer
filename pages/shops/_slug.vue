@@ -14,7 +14,7 @@ export default {
   async asyncData({ $axios, params: { slug } }) {
     try {
       console.log(slug)
-      const shop = await $axios.get(`/api/shops/${slug}`)
+      const shop = await $axios.get(`/api/shops/5f5f3146cf1c611658a47dc8`)
       console.log(shop)
       return { shop }
     } catch (e) {

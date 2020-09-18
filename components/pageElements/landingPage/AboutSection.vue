@@ -1,8 +1,14 @@
 <template>
   <div class="pt-10">
-    <img src="/icon.png" width="150px" />
-    <h2>{{ $t('landing_page.about.title') }}</h2>
-    <p>{{ $t('landing_page.about.text') }}</p>
+    <h2 class="text-center">{{ $t('landing_page.about.title') }}</h2>
+    <div class="flex justify-center">
+      <div class="w-1/2">
+        <img src="/icon.png" class="w-auto" />
+      </div>
+      <div class="w-1/2">
+        <p>{{ $t('landing_page.about.text') }}</p>
+      </div>
+    </div>
   </div>
 </template>
 

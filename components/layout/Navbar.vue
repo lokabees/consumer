@@ -18,7 +18,7 @@ export default {
   name: 'Navbar',
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .navbar {
   @apply bg-white antialiased border-t border-grey-light p-2;
 
