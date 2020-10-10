@@ -8,7 +8,7 @@
       validation="required"
     />
     <!-- shop list -->
-    <div class="grid grid-flow-row grid-cols-2 p-2 gap-2">
+    <div class="grid grid-flow-row sm:grid-cols-2 p-2 gap-2">
       <ShopSearchResult
         v-for="shop in shops"
         :key="shop._id"
