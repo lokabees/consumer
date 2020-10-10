@@ -1,22 +1,24 @@
 <template>
   <div>
     <div class="mt-5">
-      <h1 class="text-center title pb-5">{{ $t('landing_page.title') }}</h1>
-      <div class="flex">
+      <div class="flex w-full">
+        <h1 class="mx-auto leading-tight text-center title pb-5 max-w-lg">
+          {{ $t('landing_page.title') }}
+        </h1>
+      </div>
+      <div class="container flex">
         <!--list all shops-->
         <ShopList class="w-1/2" :shops="exampleShops" />
         <!--Map component-->
-        <!--<div id="map" class="md:w-1/2 map" />-->
+        <div id="map" class="md:w-1/2 map" />
       </div>
 
       <!--about section-->
       <AboutSection />
 
-      <!--contact section-->
-      <!--
-
+      <!--sponsors section-->
       <SponsorsSection />
-    -->
+
       <!--contact section-->
       <ContactSection />
     </div>
