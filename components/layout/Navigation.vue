@@ -15,7 +15,10 @@
         <div
           class="flex flex-wrap content-center justify-end w-1/3 overflow-hidden"
         >
-          <button class="secondary" @click="$router.push('/login')">
+          <button
+            class="h-full bg-primary text-white rounded-none"
+            @click="$router.push('/login')"
+          >
             {{ $t('navbar.login') }}
           </button>
         </div>

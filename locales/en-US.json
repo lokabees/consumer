@@ -10,6 +10,16 @@
     "about": {
       "title": "About Lokabees",
       "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    "contact": {
+      "title": "Let's stay in contact",
+      "text": "Stay updated for new features, new shops, local updates and more with our newsletter!",
+      "placeholder": "Yout email address",
+      "button": "Sign up"
+    },
+    "sponsors": {
+      "title": "Our sponsors",
+      "subtext": "Would you like to offer your support? Email us:"
     }
   },
   "navbar": {

@@ -6,11 +6,29 @@ Vue.use(VueFormulate, {
   plugins: [de],
   locale: 'de',
   classes: {
-    outer: 'mb-6',
-    input:
-      'border border-light shadow-xs rounded px-3 py-2 leading-none focus:border-black outline-none border-box w-full resize-none',
-    label: 'font-medium text-sm',
+    wrapper: (context) => {
+      const defaultClasses = 'my-4'
+      switch (context.classification) {
+        case 'button':
+          return `${defaultClasses}`
+        case 'box':
+          return `${defaultClasses} flex items-center`
+        default:
+          return defaultClasses
+      }
+    },
+    input(context) {
+      switch (context.classification) {
+        case 'button':
+          return 'button primary w-full'
+        case 'box':
+          return 'form-checkbox h-6 w-6 rounded-sm text-primary transition duration-150 ease-in-out focus:shadow-none mr-2'
+        default:
+          return 'form-input transition ease-in duration-200 border rounded-sm py-4 outline-none w-full resize-none focus:border-black focus:shadow-none hover:primary-lightest'
+      }
+    },
+    label: 'text-sm font-bold',
     help: 'text-xs text-dark',
-    error: 'text-warning text-xs',
+    error: 'text-danger text-xs',
   },
 })

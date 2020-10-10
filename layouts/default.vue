@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col min-h-screen">
     <navigation class="hidden md:block sticky top-0 z-30" />
-    <nuxt class="container flex-1 mx-auto md:mb-10" />
+    <nuxt />
     <Footer />
     <navbar class="block md:hidden fixed bottom-0 w-full" />
   </div>
