@@ -7,14 +7,17 @@
       :placeholder="'SEARCH PLACEHOLDER'"
       validation="required"
     />
+    {{ selectedShop }}
     <!-- shop list -->
-    <ShopSearchResult
-      v-for="shop in shops"
-      :key="shop._id"
-      :shop="shop"
-      :selected="shop._id === selectedShop"
-      @selectShop="selectedShop = shop._id"
-    />
+    <div class="grid grid-flow-row grid-cols-2">
+      <ShopSearchResult
+        v-for="shop in shops"
+        :key="shop._id"
+        :shop="shop"
+        :selected="shop._id === selectedShop"
+        @selectShop="selectedShop = shop._id"
+      />
+    </div>
   </div>
 </template>
 

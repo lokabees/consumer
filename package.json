@@ -41,6 +41,7 @@
     "nuxt-webfontloader": "^1.1.0",
     "redirect-ssl": "^2.0.0",
     "tailwindcss-spinner": "^1.2.0",
+    "vue-eva-icons": "^1.1.1",
     "vue-i18n": "^8.21.1",
     "vue-lazy-hydration": "^1.0.0-beta.14"
   },

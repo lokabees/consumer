@@ -6,7 +6,7 @@
         <!--list all shops-->
         <ShopList class="w-1/2" :shops="exampleShops" />
         <!--Map component-->
-        <div id="map" class="md:w-1/2 map" />
+        <!--<div id="map" class="md:w-1/2 map" />-->
       </div>
 
       <!--about section-->
@@ -44,6 +44,22 @@ export default {
           description: 'Decription for store 2',
           address: 'Address for store 2',
           slug: 'example-2',
+        },
+        {
+          _id: '3',
+          name: 'Example Store 3',
+          images: { cover: '/icon.png' },
+          description: 'Decription for store 3',
+          address: 'Address for store 3',
+          slug: 'example-3',
+        },
+        {
+          _id: '4',
+          name: 'Example Store 4',
+          images: { cover: '/icon.png' },
+          description: 'Decription for store 4',
+          address: 'Address for store 4',
+          slug: 'example-4',
         },
       ],
     }
