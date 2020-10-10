@@ -7,9 +7,8 @@
       :placeholder="'SEARCH PLACEHOLDER'"
       validation="required"
     />
-    {{ selectedShop }}
     <!-- shop list -->
-    <div class="grid grid-flow-row grid-cols-2">
+    <div class="grid grid-flow-row grid-cols-2 p-2 gap-2">
       <ShopSearchResult
         v-for="shop in shops"
         :key="shop._id"

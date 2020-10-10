@@ -5,8 +5,16 @@
     @click="$emit('selectShop')"
   >
     <div>
-      <div class="flex w-full p-4">
-        <div class="w-1/2 relative pb-1/4">
+      <div class="flex w-full">
+        <div
+          class="relative"
+          :class="{
+            'w-1/2': selected,
+            'pb-1/3': selected,
+            'pb-2/3': !selected,
+            'w-full': !selected,
+          }"
+        >
           <img
             :src="shop.images.cover"
             class="absolute top-0 left-0 h-full object-cover w-full rounded-lg"
@@ -28,8 +36,8 @@
           <p class="text-sm">{{ shop.address }}</p>
         </div>
         <div class="flex w-1/2 items-center">
-          <div class="flex-auto">
-            <button v-if="selected" class="p-0">
+          <div class="flex flex-auto">
+            <button v-if="selected" class="p-0 mx-auto">
               <div>
                 <eva-icon class="mx-auto" name="phone-outline" />
               </div>
@@ -38,8 +46,8 @@
               </div>
             </button>
           </div>
-          <div class="flex-auto">
-            <button v-if="selected" class="p-0">
+          <div class="flex flex-auto">
+            <button v-if="selected" class="p-0 mx-auto">
               <div>
                 <eva-icon class="mx-auto" name="email-outline" />
               </div>
