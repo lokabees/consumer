@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-primary-lightest py-10">
     <div class="container prose text-center">
       <h2>{{ $t('landing_page.sponsors.title') }}</h2>
 
