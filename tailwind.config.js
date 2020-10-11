@@ -15,6 +15,10 @@ module.exports = {
         serif: ['Merriweather', ...fontFamily.serif],
         sans: ['Montserrat', ...fontFamily.sans],
       },
+      spacing: {
+        '3/2': '150%',
+        '4/3': '133.333333333%',
+      },
     },
     container: {
       center: true,

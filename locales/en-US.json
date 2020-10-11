@@ -14,7 +14,7 @@
     "contact": {
       "title": "Let's stay in contact",
       "text": "Stay updated for new features, new shops, local updates and more with our newsletter!",
-      "placeholder": "Yout email address",
+      "placeholder": "Your email address",
       "button": "Sign up"
     },
     "sponsors": {
@@ -24,6 +24,16 @@
   },
   "navbar": {
     "login": "Login"
+  },
+  "shop": {
+    "now_open": "Open now",
+    "now_closed": "Closed now",
+    "delivery": "Delivery",
+    "ship": "Ship",
+    "pickup": "Pickup",
+    "call": "Call",
+    "send_msg": "Send Message",
+    "product_highlights": "Product Highlights"
   },
   "footer": {
     "links": {
