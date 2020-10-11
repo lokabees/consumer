@@ -33,9 +33,9 @@
     </div>
 
     <div class="bg-primary-lightest">
-      <div class="container flex">
-        <div class="w-1/2 mt-20 text-center">
-          <h1 class="text-5xl">{{ shop.name }}</h1>
+      <div class="container md:flex p-2">
+        <div class="md:w-1/2 mt-20 text-center">
+          <h1 class="text-5xl uppercase leading-tight">{{ shop.name }}</h1>
           <div class="flex flex-wrap justify-center w-full mt-8">
             <div
               v-for="(categoryId, key) in shop.categories"
@@ -46,7 +46,7 @@
             </div>
           </div>
         </div>
-        <div class="w-1/2 py-3 mb-5">
+        <div class="md:w-1/2 py-3 mb-5">
           <div class="flex mt-5 mb-3">
             <div class="w-2/3 font-bold">
               {{ $t('shop.now_open') }} 0:00-15:00
@@ -99,12 +99,12 @@
 export default {
   async asyncData({ $axios, params: { slug } }) {
     const products = [
-      { name: 'Vase', description: 'baumwolle' },
-      { name: 'Hundeleine', description: 'baumwolle' },
-      { name: 'Shirt', description: 'baumwolle' },
-      { name: 'Glas', description: 'baumwolle' },
-      { name: 'Schüssel', description: 'baumwolle' },
-      { name: 'Bett', description: 'baumwolle' },
+      { name: 'Vase', description: 'baumwolle', image: '/icon.png' },
+      { name: 'Hundeleine', description: 'baumwolle', image: '/icon.png' },
+      { name: 'Shirt', description: 'baumwolle', image: '/icon.png' },
+      { name: 'Glas', description: 'baumwolle', image: '/icon.png' },
+      { name: 'Schüssel', description: 'baumwolle', image: '/icon.png' },
+      { name: 'Bett', description: 'baumwolle', image: '/icon.png' },
     ]
     try {
       const shop = await $axios.get(`/api/shops/5f81cd83ef87a4632cdaa69e`)
