@@ -6,11 +6,11 @@
           {{ $t('landing_page.title') }}
         </h1>
       </div>
-      <div class="container flex">
+      <div class="container md:flex">
         <!--list all shops-->
-        <ShopList class="w-1/2" :shops="exampleShops" />
+        <ShopList class="md:w-1/2" :shops="exampleShops" />
         <!--Map component-->
-        <div id="map" class="md:w-1/2 map" />
+        <div id="map" class="hidden md:block md:w-1/2 map" />
       </div>
 
       <!--about section-->

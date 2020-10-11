@@ -5,9 +5,9 @@
 
       <div class="grid md:grid-cols-3 grid-cols-2">
         <div
-          class="relative pb-1/2"
           v-for="sponsor in sponsors"
           :key="sponsor.name"
+          class="relative pb-1/2"
         >
           <img
             class="absolute h-full w-full object-contain m-0"
