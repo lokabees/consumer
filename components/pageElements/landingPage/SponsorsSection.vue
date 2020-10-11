@@ -3,7 +3,7 @@
     <div class="container prose text-center">
       <h2>{{ $t('landing_page.sponsors.title') }}</h2>
 
-      <div class="grid md:grid-cols-3 sm:grid-cols-2">
+      <div class="grid md:grid-cols-3 grid-cols-2">
         <div
           class="relative pb-1/2"
           v-for="sponsor in sponsors"
