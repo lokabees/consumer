@@ -4,7 +4,7 @@
       <div class="relative flex justify-end pb-1/4 bg-primary-light">
         <img
           v-if="coverImage"
-          :src="shop.images.cover"
+          :src="coverImage"
           class="absolute h-full w-full object-cover"
         />
         <div v-else class="absolute flex h-full w-1/2 items-center">
@@ -18,11 +18,14 @@
       </div>
 
       <div
-        class="absolute bottom-0 left-20 bg-white border-4 border-white -mb-12 w-1/3 pb-1/5"
+        class="absolute bottom-0 mx-auto md:left-20 bg-white border-4 border-white -mb-12 md:w-1/3 pb-1/5"
       >
-        <div v-if="profileImage">
-          <img :src="profileImage" class="object-cover" />
-        </div>
+        <img
+          v-if="profileImage"
+          :src="profileImage"
+          class="absolute h-full w-full object-cover"
+        />
+
         <div v-else class="absolute flex h-full w-full bg-grey-lighter">
           <div class="mx-auto my-auto text-center">
             <img class="mx-auto pb-5" src="/img/icons/add-pic.svg" />
@@ -36,7 +39,7 @@
       <div class="container md:flex p-2">
         <div class="md:w-1/2 mt-20 text-center">
           <h1 class="text-5xl uppercase leading-tight">{{ shop.name }}</h1>
-          <div class="flex flex-wrap justify-center w-full mt-8">
+          <div class="flex flex-wrap justify-center w-full mt-">
             <div
               v-for="(categoryId, key) in shop.categories"
               :key="key"
@@ -52,18 +55,18 @@
               {{ $t('shop.now_open') }} 0:00-15:00
             </div>
             <div class="flex-auto text-xs text-primary">
-              <div class="h-8 flex items-center">
+              <div class="h-8 flex items-center text-center">
                 <img src="/img/icons/delivery.svg" />
               </div>
               <span>{{ $t('shop.delivery') }}</span>
             </div>
-            <div class="flex-auto text-xs text-primary">
+            <div class="flex-auto text-xs text-primary text-center">
               <div class="h-8 flex items-center">
                 <img src="/img/icons/pickup.svg" />
               </div>
               <span>{{ $t('shop.pickup') }}</span>
             </div>
-            <div class="flex-auto text-xs text-primary">
+            <div class="flex-auto text-xs text-primary text-center">
               <div class="h-8 flex items-center">
                 <img src="/img/icons/ship.svg" />
               </div>
@@ -86,7 +89,10 @@
             </button>
           </div>
 
-          <div>show address</div>
+          <div>
+            show address
+            <div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -107,7 +113,7 @@ export default {
       { name: 'Bett', description: 'baumwolle', image: '/icon.png' },
     ]
     try {
-      const shop = await $axios.get(`/api/shops/5f81cd83ef87a4632cdaa69e`)
+      const { data: shop } = await $axios.get(`/api/shops/${slug}`)
       const shopCategories = await $axios.$get('/api/shops/categories')
 
       console.log(shop)

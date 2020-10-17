@@ -8,7 +8,7 @@
         <div
           v-for="product in products"
           :key="product.name"
-          class="bg-grey w-full h-full"
+          class="w-full h-full"
         >
           <div class="relative pb-4/3">
             <img

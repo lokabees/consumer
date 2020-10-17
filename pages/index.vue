@@ -8,9 +8,15 @@
       </div>
       <div class="container md:flex">
         <!--list all shops-->
-        <ShopList class="md:w-1/2" :shops="exampleShops" />
-        <!--Map component-->
-        <div id="map" class="hidden md:block md:w-1/2 map" />
+        <ShopList class="md:w-1/2" :initial-shops="shops" />
+
+        <div class="w-full md:w-1/2 p-5">
+          <Map
+            :token="$config.mapboxKey"
+            map-style="mapbox://styles/mapbox/streets-v11"
+            :shops="shops"
+          />
+        </div>
       </div>
 
       <!--about section-->
@@ -26,60 +32,80 @@
 </template>
 
 <script>
-import mapboxgl from 'mapbox-gl'
+// import mapboxgl from 'mapbox-gl'
 export default {
-  asyncData() {
+  async asyncData({ $axios }) {
+    try {
+      const geohash = 'u1r3r97xyucn' // default = Braunschweig
+      const { rows: shops } = await $axios.$get(`/api/shops/near/${geohash}`)
+      return { shops }
+    } catch (e) {
+      return {
+        shops: [
+          {
+            _id: '1',
+            name: 'Lukas Mauser',
+            images: { cover: '/icon.png' },
+            description: 'Decription for store 1',
+            address: { geometry: { coordinates: [10.515, 52.265] } },
+            slug: 'lukas-mauser',
+            parsedOpeningHours: {
+              monday: { open: null, close: null },
+              sunday: { open: null, close: null },
+            },
+          },
+          {
+            _id: '2',
+            name: 'Example Store 2',
+            images: { cover: '/icon.png' },
+            description: 'Decription for store 2',
+            address: { geometry: { coordinates: [10.518, 52.265] } },
+            slug: 'example-2',
+          },
+          {
+            _id: '3',
+            name: 'Example Store 3',
+            images: { cover: '/icon.png' },
+            description: 'Decription for store 3',
+            address: { geometry: { coordinates: [10.52, 52.265] } },
+            slug: 'example-3',
+          },
+          {
+            _id: '4',
+            name: 'Example Store 4',
+            images: { cover: '/icon.png' },
+            description: 'Decription for store 4',
+            address: { geometry: { coordinates: [10.525, 52.265] } },
+            slug: 'example-4',
+          },
+        ],
+      }
+    }
+  },
+  head() {
     return {
-      exampleShops: [
+      link: [
         {
-          _id: '1',
-          name: 'Lukas Mauser',
-          images: { cover: '/icon.png' },
-          description: 'Decription for store 1',
-          address: 'address for store 1',
-          slug: 'lukas-mauser',
+          rel: 'stylesheet',
+          href:
+            'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css',
         },
         {
-          _id: '2',
-          name: 'Example Store 2',
-          images: { cover: '/icon.png' },
-          description: 'Decription for store 2',
-          address: 'Address for store 2',
-          slug: 'example-2',
-        },
-        {
-          _id: '3',
-          name: 'Example Store 3',
-          images: { cover: '/icon.png' },
-          description: 'Decription for store 3',
-          address: 'Address for store 3',
-          slug: 'example-3',
-        },
-        {
-          _id: '4',
-          name: 'Example Store 4',
-          images: { cover: '/icon.png' },
-          description: 'Decription for store 4',
-          address: 'Address for store 4',
-          slug: 'example-4',
+          rel: 'stylesheet',
+          href:
+            'https://cdn.jsdelivr.net/npm/vue-mapbox@latest/dist/vue-mapbox.css',
         },
       ],
-    }
-  },
-  data() {
-    return {
-      map: null,
-    }
-  },
-  mounted() {
-    if (!mapboxgl.accessToken) {
-      mapboxgl.accessToken = this.$config.mapboxKey
-      this.map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-        center: [10.45, 51.16], // starting position [lng, lat]
-        zoom: 5, // startin
-      })
+      script: [
+        {
+          src: 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js',
+        },
+        {
+          type: 'text/javascript',
+          src:
+            'https://cdn.jsdelivr.net/npm/vue-mapbox@latest/dist/vue-mapbox.min.js',
+        },
+      ],
     }
   },
 }

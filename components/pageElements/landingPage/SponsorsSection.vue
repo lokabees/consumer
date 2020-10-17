@@ -1,6 +1,6 @@
 <template>
   <div class="bg-primary-lightest py-10">
-    <div class="container prose text-center">
+    <div class="container text-center">
       <h2>{{ $t('landing_page.sponsors.title') }}</h2>
 
       <div class="grid md:grid-cols-3 grid-cols-2">

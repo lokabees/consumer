@@ -50,6 +50,7 @@ export default {
     '~/plugins/modules/i18n',
     '~/plugins/modules/vue-formulate',
     { src: '~/plugins/modules/eva-icons', ssr: false },
+    { src: '~/plugins/modules/mapbox', ssr: false },
   ],
   /*
    ** Auto import components
