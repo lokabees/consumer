@@ -19,8 +19,8 @@
           <Map
             class="map"
             :token="$config.mapboxKey"
-            map-style="mapbox://styles/mapbox/streets-v11"
             :shops="shops"
+            :selected-shop="selectedShop"
             @load="onMapLoad($event)"
             @selectShop="selectedShop = $event"
           />

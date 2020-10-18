@@ -4,7 +4,7 @@
       class="h-full"
       :center.sync="center"
       :access-token="token"
-      :map-style="mapStyle"
+      map-style="mapbox://styles/mapbox/streets-v11"
       :zoom="zoom"
       @load="$emit('load', $event)"
     >
@@ -15,12 +15,16 @@
         :coordinates="getShopCoordinates(shop)"
         color="blue"
       >
-        <img
-          slot="marker"
-          src="/icon.png"
-          class="w-10 cursor-pointer"
-          @click="$emit('selectShop', shop)"
-        />
+        <div slot="marker" class="flex">
+          <img
+            src="/icon.png"
+            class="w-10 cursor-pointer z-10"
+            @click="$emit('selectShop', shop)"
+          />
+          <div v-if="isSelected(shop._id)" class="absolute pl-10 bg-white z-5">
+            <span class="font-bold">{{ shop.name }}</span>
+          </div>
+        </div>
       </MglMarker>
     </MglMap>
   </div>
@@ -39,10 +43,9 @@ export default {
       required: true,
       default: '',
     },
-    mapStyle: {
-      type: String,
-      required: true,
-      default: '',
+    selectedShop: {
+      type: Object,
+      default: () => {},
     },
   },
   data() {
@@ -54,6 +57,9 @@ export default {
   methods: {
     getShopCoordinates(shop) {
       return shop?.address?.geometry?.coordinates || [0, 0]
+    },
+    isSelected(id) {
+      return this.selectedShop._id === id
     },
   },
 }
