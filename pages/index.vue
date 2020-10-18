@@ -6,14 +6,18 @@
           {{ $t('landing_page.title') }}
         </h1>
       </div>
-      {{ shops }}
       <div class="flex">
         <!--list all shops-->
         <div class="md:w-1/2 p-5">
-          <ShopList :selected-shop="selectedShop" />
+          <ShopList
+            :selected-shop="selectedShop"
+            @search="flyTo($event)"
+            @selectShop="selectedShop = $event"
+          />
         </div>
         <div class="w-full md:w-1/2">
           <Map
+            class="map"
             :token="$config.mapboxKey"
             map-style="mapbox://styles/mapbox/streets-v11"
             :shops="shops"
@@ -45,6 +49,7 @@ export default {
   data: () => ({
     showDetail: false,
     selectedShop: {},
+    map: {},
   }),
   computed: {
     ...mapState({
@@ -64,11 +69,19 @@ export default {
     onMapLoad({ map }) {
       const viewChanged = debounce(this.viewChanged, 400)
 
-      map.on('zoomend', (e) => {
+      this.map = map
+
+      this.map.on('zoomend', (e) => {
         viewChanged(e)
       })
-      map.on('moveend', (e) => {
+      this.map.on('moveend', (e) => {
         viewChanged(e)
+      })
+    },
+    flyTo(location) {
+      this.map.flyTo({
+        center: location?.geometry?.coordinates || [52.268874, 10.52677],
+        zoom: 11,
       })
     },
     showDetails(shop) {
@@ -122,6 +135,6 @@ export default {
 </script>
 <style scoped>
 .map {
-  height: 600px;
+  height: 620px;
 }
 </style>

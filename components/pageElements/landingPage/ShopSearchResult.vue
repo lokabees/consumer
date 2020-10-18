@@ -2,7 +2,7 @@
   <div
     class="col-span-1"
     :class="{ active: selected }"
-    @click="$emit('selectShop')"
+    @click="$emit('selectShop', shop)"
   >
     <div>
       <div class="flex w-full">
@@ -10,8 +10,8 @@
           class="relative"
           :class="{
             'w-1/2': selected,
-            'pb-1/3': selected,
-            'pb-2/3': !selected,
+            'pb-1/4': selected,
+            'pb-1/2': !selected,
             'w-full': !selected,
           }"
         >
@@ -115,6 +115,7 @@ export default {
       return `${street} ${number}, ${postcode} ${city}`
     },
     timeToClose() {
+      /*
       const date = new Date()
       const hr = date.getHours()
       const min = date.getMinutes()
@@ -137,6 +138,7 @@ export default {
 
       console.log(hoursToClose)
       console.log(minsToClose)
+      */
     },
   },
 }

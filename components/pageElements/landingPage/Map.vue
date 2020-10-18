@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="h-full">
     <MglMap
+      class="h-full"
       :center.sync="center"
-      style="height: 600px"
       :access-token="token"
       :map-style="mapStyle"
       :zoom="zoom"
