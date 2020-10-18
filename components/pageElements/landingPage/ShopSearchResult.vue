@@ -3,6 +3,7 @@
     class="col-span-1"
     :class="{ active: selected }"
     @click="$emit('selectShop', shop)"
+    @blur="blur"
   >
     <div>
       <div class="flex w-full">
@@ -32,11 +33,11 @@
       </div>
 
       <div class="w-full flex" :class="{ bottomRow: selected }">
-        <div class="w-1/2">
+        <div :class="{ 'w-1/2': selected }">
           <h3 class="my-0 text-lg font-black">{{ shop.name }}</h3>
-          <p class="text-sm">{{ getAddressString() }}</p>
+          <p class="text-sm leading-tight">{{ getAddressString() }}</p>
         </div>
-        <div class="flex w-1/2 items-center">
+        <div v-if="selected" class="flex w-1/2 items-center">
           <div class="flex flex-auto">
             <button v-if="selected" class="p-0 mx-auto">
               <div>
@@ -113,6 +114,9 @@ export default {
     getAddressString() {
       const { street, city, postcode, number } = this.shop.address
       return `${street} ${number}, ${postcode} ${city}`
+    },
+    blur() {
+      console.log('blur')
     },
     timeToClose() {
       /*

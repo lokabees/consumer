@@ -1,7 +1,7 @@
 <template>
   <div class="bg-primary-lightest py-10">
     <div class="container text-center">
-      <h2>{{ $t('landing_page.sponsors.title') }}</h2>
+      <h2 class="pb-5">{{ $t('landing_page.sponsors.title') }}</h2>
 
       <div class="grid md:grid-cols-3 grid-cols-2">
         <div
@@ -32,27 +32,27 @@ export default {
       sponsors: [
         {
           name: 'heroku',
-          img: '/icon.png',
+          img: '/img/logos/heroku-logo-253x300.png',
         },
         {
           name: 'contentful',
-          img: '/icon.png',
+          img: '/img/logos/commercetools-logo-300x152.png',
         },
         {
           name: 'regierung',
-          img: '/icon.png',
+          img: '/img/logos/figma-logo-150x150.png',
         },
         {
           name: 'x',
-          img: '/icon.png',
+          img: '/img/logos/phrase-logo-300x119.png',
         },
         {
           name: 'y',
-          img: '/icon.png',
+          img: '/img/logos/contentful-logo-300x62.png',
         },
         {
           name: 'z',
-          img: '/icon.png',
+          img: '/img/logos/heroku-logo-253x300.png',
         },
       ],
     }

@@ -5,7 +5,10 @@
       "open_until": "Open until",
       "call": "Call",
       "email": "E-Mail",
-      "go_to_store": "Go to store"
+      "go_to_store": "Go to store",
+      "search": "Search",
+      "search_placeholder": "Enter a location",
+      "no_shops": "We have not found any shops in this area :-( Feel free to ask local shop owners to register their shop on lokabees."
     },
     "about": {
       "title": "About Lokabees",

@@ -6,9 +6,9 @@
           {{ $t('landing_page.title') }}
         </h1>
       </div>
-      <div class="flex">
+      <div class="md:flex">
         <!--list all shops-->
-        <div class="md:w-1/2 p-5">
+        <div class="w-full md:w-1/2 p-5">
           <ShopList
             :selected-shop="selectedShop"
             @search="flyTo($event)"
@@ -22,6 +22,7 @@
             map-style="mapbox://styles/mapbox/streets-v11"
             :shops="shops"
             @load="onMapLoad($event)"
+            @selectShop="selectedShop = $event"
           />
         </div>
       </div>

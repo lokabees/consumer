@@ -15,9 +15,12 @@
         :coordinates="getShopCoordinates(shop)"
         color="blue"
       >
-        <template v-slot:marker>
-          <button>hallo</button>
-        </template>
+        <img
+          slot="marker"
+          src="/icon.png"
+          class="w-10 cursor-pointer"
+          @click="$emit('selectShop', shop)"
+        />
       </MglMarker>
     </MglMap>
   </div>
