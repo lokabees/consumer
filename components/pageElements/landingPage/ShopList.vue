@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-10">
+  <div>
     <!-- search bar -->
     <FormulateForm @submit="getShopsNear">
       <FormulateInput

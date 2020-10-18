@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container p-2">
+    <div class="container p-10">
       <h2 class="text-center">{{ $t('landing_page.about.title') }}</h2>
       <div class="md:flex items-center">
         <div class="md:w-1/2 md:pr-2">

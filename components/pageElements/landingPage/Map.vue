@@ -1,11 +1,18 @@
 <template>
   <div>
-    <MglMap style="height: 600px" :access-token="token" :map-style="mapStyle">
+    <MglMap
+      :center.sync="center"
+      style="height: 600px"
+      :access-token="token"
+      :map-style="mapStyle"
+      :zoom="zoom"
+      @load="$emit('load', $event)"
+    >
       <MglMarker
-        v-for="shop in shops"
-        :key="shop.slug"
+        v-for="(shop, key) in shops"
+        :key="key"
         class="cursor-pointer"
-        :coordinates="shop.address.geometry.coordinates"
+        :coordinates="getShopCoordinates(shop)"
         color="blue"
       >
         <template v-slot:marker>
@@ -33,6 +40,17 @@ export default {
       type: String,
       required: true,
       default: '',
+    },
+  },
+  data() {
+    return {
+      center: [10, 51.16],
+      zoom: 5,
+    }
+  },
+  methods: {
+    getShopCoordinates(shop) {
+      return shop?.address?.geometry?.coordinates || [0, 0]
     },
   },
 }
