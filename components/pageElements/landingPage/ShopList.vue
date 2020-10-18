@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- search bar -->
-    <FormulateForm @submit="getShopsNear">
+    <FormulateForm @submit="$emit('x')">
       <FormulateInput
         type="text"
         name="search"
@@ -16,52 +16,21 @@
         v-for="shop in shops"
         :key="shop._id"
         :shop="shop"
-        :selected="shop._id === selectedShop"
-        @selectShop="selectedShop = shop._id"
+        :selected="shop._id === selectedShop._id"
+        @selectShop="selectedShop = shop"
       />
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   props: {
-    initialShops: {
-      type: Array,
-      default: () => [],
-    },
+    selectedShop: { type: Object, default: () => {} },
   },
-  data() {
-    return {
-      shops: [],
-      selectedShop: '',
-    }
-  },
-  mounted() {
-    this.getShopsNear('geohash')
-  },
-  methods: {
-    async getShopsNear({ search }) {
-      const geohash = 'u1r3r97xyucn'
-
-      try {
-        const q = search
-        const { geometry } = await this.$axios.$get('/api/maps/suggest', {
-          params: { q },
-        })
-        const { coordinates } = geometry
-
-        console.log(coordinates)
-
-        const { rows: shops } = await this.$axios.$get(
-          `/api/shops/near/${geohash}`
-        )
-        this.shops = shops
-        console.log(shops)
-      } catch (e) {
-        console.error(e)
-      }
-    },
+  computed: {
+    ...mapGetters(['shops']),
   },
 }
 </script>

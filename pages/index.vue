@@ -10,7 +10,7 @@
       <div class="flex">
         <!--list all shops-->
         <div class="md:w-1/2 p-5">
-          <ShopList :initial-shops="shops" />
+          <ShopList :selected-shop="selectedShop" />
         </div>
         <div class="w-full md:w-1/2">
           <Map
@@ -37,7 +37,7 @@
 <script>
 // import mapboxgl from 'mapbox-gl'
 import { mapGetters, mapState, mapMutations, mapActions } from 'vuex'
-import _ from 'lodash'
+import { debounce } from 'lodash'
 export default {
   async fetch({ store, params }) {
     await store.dispatch('getShops', params)
@@ -62,42 +62,34 @@ export default {
       getShops: 'getShops',
     }),
     onMapLoad({ map }) {
-      const context = this
+      const viewChanged = debounce(this.viewChanged, 400)
+
       map.on('zoomend', (e) => {
-        context.viewChanged(e)
+        viewChanged(e)
       })
       map.on('moveend', (e) => {
-        context.viewChanged(e)
+        viewChanged(e)
       })
     },
     showDetails(shop) {
       this.selectedShop = shop
       this.showDetail = true
     },
-    async positionChanged(target) {
-      console.log('load')
+    async viewChanged({ target }) {
       const center = target.getCenter()
       const position = {
-        lattitude: center.lat,
+        latitude: center.lat,
         longitude: center.lng,
         zoom: target.getZoom(),
         name: '',
       }
 
       this.setPosition(position)
-      console.log('vie changed')
-      console.log(position)
       try {
         await this.getShops()
       } catch (error) {
         console.log(error)
       }
-    },
-    viewChanged({ target }) {
-      console.log('cahnge')
-      _.debounce(() => {
-        console.log('deb')
-      }, 200)
     },
   },
   head() {

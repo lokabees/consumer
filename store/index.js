@@ -70,6 +70,10 @@ export const actions = {
         params: { zoom },
       }
     )
+    console.log('get shops at...')
+    console.log(position)
+    console.log('response')
+    console.log(shops)
     commit('setShops', shops)
   },
 }
