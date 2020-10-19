@@ -4,7 +4,7 @@
       class="h-full"
       :center.sync="center"
       :access-token="token"
-      map-style="mapbox://styles/mapbox/streets-v11"
+      map-style="mapbox://styles/mapbox/streets-v10"
       :zoom="zoom"
       @load="$emit('load', $event)"
     >
@@ -21,7 +21,10 @@
             class="w-10 cursor-pointer z-10"
             @click="$emit('selectShop', shop)"
           />
-          <div v-if="isSelected(shop._id)" class="absolute pl-10 bg-white z-5">
+          <div
+            v-if="isSelected(shop._id)"
+            class="absolute pl-10 pr-2 bg-white z-5 shadow-md rounded"
+          >
             <span class="font-bold">{{ shop.name }}</span>
           </div>
         </div>

@@ -36,7 +36,12 @@
     "pickup": "Pickup",
     "call": "Call",
     "send_msg": "Send Message",
-    "product_highlights": "Product Highlights"
+    "product_highlights": "Product Highlights",
+    "address": "Address",
+    "website": "Website",
+    "whatsapp": "WhatsApp",
+    "show_details": "Show details",
+    "hide_details": "Hide details"
   },
   "footer": {
     "links": {

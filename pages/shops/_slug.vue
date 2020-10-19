@@ -90,8 +90,49 @@
           </div>
 
           <div>
-            show address
-            <div></div>
+            <div v-if="showDetails">
+              <div class="py-4">
+                <label class="text-sm">{{ $t('shop.address') }}</label>
+                <div class="flex border-b">
+                  <div>
+                    {{ getAddressString() }}
+                  </div>
+                  <img class="ml-auto" src="/img/icons/map.svg" />
+                </div>
+              </div>
+              <div v-if="shop.contact.website" class="py-4">
+                <label class="text-sm">{{ $t('shop.website') }}</label>
+                <div class="flex border-b">
+                  <a
+                    class="text-primary"
+                    :href="shop.contact.website"
+                    target="_blank"
+                  >
+                    {{ shop.contact.website }}
+                  </a>
+                  <img class="ml-auto" src="/img/icons/web.svg" />
+                </div>
+              </div>
+              <div v-if="shop.contact.whatsapp" class="py-4">
+                <label class="text-sm">{{ $t('shop.whatsapp') }}</label>
+                <div class="flex border-b">
+                  <div>
+                    {{ shop.contact.whatsapp }}
+                  </div>
+                  <img class="ml-auto" src="/img/icons/whatsapp.svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mt-5 text-primary cursor-pointer text-sm font-bold"
+            @click="showDetails = !showDetails"
+          >
+            {{
+              !showDetails
+                ? $t('shop.show_details') + ' +'
+                : $t('shop.hide_details') + ' -'
+            }}
           </div>
         </div>
       </div>
@@ -103,7 +144,7 @@
 
 <script>
 export default {
-  async asyncData({ $axios, params: { slug } }) {
+  async asyncData({ $axios, redirect, params: { slug } }) {
     const products = [
       { name: 'Vase', description: 'baumwolle', image: '/icon.png' },
       { name: 'Hundeleine', description: 'baumwolle', image: '/icon.png' },
@@ -120,21 +161,17 @@ export default {
       return { shop, shopCategories, products }
     } catch (e) {
       console.error(e)
+      redirect('/')
       return {
-        shop: {
-          _id: '1',
-          name: 'Lukas Mauser',
-          images: { cover: '/icon.png', profile: '/icon.png' },
-          description: 'Decription for store 1',
-          address: 'address for store 1',
-          slug: 'lukas-mauser',
-          categories: ['Auto'],
-        },
-        shopCategories: {
-          Auto: 'w und Motorrad',
-        },
+        shop: {},
+        shopCategories: {},
         products,
       }
+    }
+  },
+  data() {
+    return {
+      showDetails: false,
     }
   },
   computed: {
@@ -150,6 +187,10 @@ export default {
   methods: {
     categoryName(id) {
       return this.shopCategories[id]
+    },
+    getAddressString() {
+      const { postcode, city, street, number } = this.shop.address
+      return `${street} ${number}, ${postcode} ${city}`
     },
   },
 }
