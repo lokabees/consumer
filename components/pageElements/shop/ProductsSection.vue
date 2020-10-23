@@ -7,17 +7,17 @@
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         <div
           v-for="product in products"
-          :key="product.name"
+          :key="product.title"
           class="w-full h-full"
         >
           <div class="relative pb-4/3">
             <img
               class="absolute object-cover h-full w-full"
-              :src="product.image"
+              :src="product.picture ? product.picture.url : 'icon.png'"
             />
           </div>
           <div class="text-grey-dark">
-            <h3 class="text-lg font-bold">{{ product.name }}</h3>
+            <h3 class="text-lg font-bold">{{ product.title }}</h3>
             <p class="text-lg">{{ product.description }}</p>
           </div>
         </div>

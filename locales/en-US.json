@@ -29,6 +29,8 @@
     "login": "Login"
   },
   "shop": {
+    "open_today": "Open today",
+    "closed": "Closed",
     "now_open": "Open now",
     "now_closed": "Closed now",
     "delivery": "Delivery",

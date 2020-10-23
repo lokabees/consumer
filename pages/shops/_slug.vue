@@ -52,7 +52,8 @@
         <div class="md:w-1/2 py-3 mb-5">
           <div class="flex mt-5 mb-3">
             <div class="w-2/3 font-bold">
-              {{ $t('shop.now_open') }} 0:00-15:00
+              {{ $t('shop.open_today') }}:
+              {{ getOpeningTime() || $t('shop.closed') }}
             </div>
             <div
               v-for="deliveryOption in shop.delivery"
@@ -60,9 +61,21 @@
               class="flex-auto text-xs text-primary"
             >
               <div class="h-8 flex items-center text-center">
-                <img :src="deliveryOptions[deliveryOption].icon" />
+                <img
+                  :src="
+                    deliveryOptions[deliveryOption]
+                      ? deliveryOptions[deliveryOption].icon
+                      : '/icon.png'
+                  "
+                />
               </div>
-              <span>{{ $t(deliveryOptions[deliveryOption].name) }}</span>
+              <span>{{
+                $t(
+                  deliveryOptions[deliveryOption]
+                    ? deliveryOptions[deliveryOption].name
+                    : ''
+                )
+              }}</span>
             </div>
           </div>
 
@@ -147,19 +160,12 @@
 <script>
 export default {
   async asyncData({ $axios, redirect, params: { slug } }) {
-    const products = [
-      { name: 'Vase', description: 'baumwolle', image: '/icon.png' },
-      { name: 'Hundeleine', description: 'baumwolle', image: '/icon.png' },
-      { name: 'Shirt', description: 'baumwolle', image: '/icon.png' },
-      { name: 'Glas', description: 'baumwolle', image: '/icon.png' },
-      { name: 'Schüssel', description: 'baumwolle', image: '/icon.png' },
-      { name: 'Bett', description: 'baumwolle', image: '/icon.png' },
-    ]
     try {
       const { data: shop } = await $axios.get(`/api/shops/${slug}`)
       const shopCategories = await $axios.$get('/api/shops/categories')
-
-      console.log(shop)
+      const { rows: products } = await $axios.$get(
+        `/api/shops/${shop._id}/products`
+      )
       return { shop, shopCategories, products }
     } catch (e) {
       console.error(e)
@@ -167,7 +173,7 @@ export default {
       return {
         shop: {},
         shopCategories: {},
-        products,
+        products: [],
       }
     }
   },
@@ -207,6 +213,27 @@ export default {
     getAddressString() {
       const { postcode, city, street, number } = this.shop.address
       return `${street} ${number}, ${postcode} ${city}`
+    },
+    getOpeningTime() {
+      const date = new Date()
+      const day = date.getDay()
+      const weekdays = [
+        'sunday',
+        'monday',
+        'tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+      ]
+      const weekday = weekdays[day]
+      const { open, close } = this.shop.openingHours[weekday]
+
+      // TODO breaks
+
+      return open !== 'NaN:NaN' && close !== 'NaN:NaN'
+        ? `${open}-${close}`
+        : null
     },
   },
 }
