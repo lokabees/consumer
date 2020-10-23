@@ -19,7 +19,7 @@
           <img
             src="/icon.png"
             class="w-10 cursor-pointer z-10"
-            @click="selectShop(shop)"
+            @click="$emit('selectShop', shop)"
           />
           <div
             v-if="isSelected(shop._id)"

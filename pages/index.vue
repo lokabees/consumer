@@ -12,7 +12,7 @@
           <ShopList
             :selected-shop="selectedShop"
             @search="flyTo($event)"
-            @selectShop="selectedShop = $event"
+            @selectShop="selectShop($event)"
           />
         </div>
         <div class="w-full md:w-1/2">
@@ -22,7 +22,7 @@
             :shops="shops"
             :selected-shop="selectedShop"
             @load="onMapLoad($event)"
-            @selectShop="selectedShop = $event"
+            @selectShop="selectShop($event)"
           />
         </div>
       </div>
@@ -48,7 +48,6 @@ export default {
     await store.dispatch('shops/getShops', params)
   },
   data: () => ({
-    showDetail: false,
     selectedShop: {},
     map: {},
   }),
@@ -61,12 +60,19 @@ export default {
     }),
   },
   methods: {
+    ...mapMutations('shops', {
+      selectShopInStore: 'selectShop',
+    }),
     ...mapMutations({
       setPosition: 'setPosition',
     }),
     ...mapActions('shops', {
       getShops: 'getShops',
     }),
+    selectShop(shop) {
+      this.selectShopInStore(shop)
+      this.flyTo(shop.address)
+    },
     onMapLoad({ map }) {
       const viewChanged = debounce(this.viewChanged, 800)
 
@@ -84,10 +90,6 @@ export default {
         center: location?.geometry?.coordinates || [52.268874, 10.52677],
         zoom: 11,
       })
-    },
-    showDetails(shop) {
-      this.selectedShop = shop
-      this.showDetail = true
     },
     async viewChanged({ target }) {
       const center = target.getCenter()
