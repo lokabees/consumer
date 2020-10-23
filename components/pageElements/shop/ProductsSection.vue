@@ -4,6 +4,9 @@
       <h2 class="text-center mb-10 text-grey-dark">
         {{ $t('shop.product_highlights') }}
       </h2>
+      <div v-if="products.length === 0" class="text-center">
+        {{ $t('shop.no_products') }}
+      </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         <div
           v-for="product in products"

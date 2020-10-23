@@ -43,7 +43,8 @@
     "website": "Website",
     "whatsapp": "WhatsApp",
     "show_details": "Show more",
-    "hide_details": "Hide details"
+    "hide_details": "Hide details",
+    "no_products": "Unfortunately, the shop owner did not upload any products yet."
   },
   "footer": {
     "links": {
