@@ -45,7 +45,7 @@ import { mapGetters, mapState, mapMutations, mapActions } from 'vuex'
 import { debounce } from 'lodash'
 export default {
   async fetch({ store, params }) {
-    await store.dispatch('getShops', params)
+    await store.dispatch('shops/getShops', params)
   },
   data: () => ({
     showDetail: false,
@@ -56,7 +56,7 @@ export default {
     ...mapState({
       selectedPosition: (state) => state.position.selectedMapPosition,
     }),
-    ...mapGetters({
+    ...mapGetters('shops', {
       shops: 'shops',
     }),
   },
@@ -64,11 +64,11 @@ export default {
     ...mapMutations({
       setPosition: 'setPosition',
     }),
-    ...mapActions({
+    ...mapActions('shops', {
       getShops: 'getShops',
     }),
     onMapLoad({ map }) {
-      const viewChanged = debounce(this.viewChanged, 400)
+      const viewChanged = debounce(this.viewChanged, 800)
 
       this.map = map
 

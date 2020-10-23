@@ -79,14 +79,24 @@
           </div>
 
           <div class="flex mt-8">
-            <button class="bg-primary text-white flex mr-2">
-              {{ $t('shop.call') }}
-              <eva-icon class="m-auto" name="phone-outline" fill="#fff" />
-            </button>
-            <button class="bg-primary text-white flex ml-2">
-              {{ $t('shop.send_msg') }}
-              <eva-icon class="m-auto" name="email-outline" fill="#fff" />
-            </button>
+            <a :href="`tel:${shop.contact.phone}`">
+              <button
+                :class="{ disabled: !shop.contact.phone }"
+                class="bg-primary text-white flex mr-2"
+              >
+                {{ $t('shop.call') }}
+                <eva-icon class="m-auto" name="phone-outline" fill="#fff" />
+              </button>
+            </a>
+            <a :href="`mailto:${shop.contact.email}`" target="_blank">
+              <button
+                :class="{ disabled: !shop.contact.email }"
+                class="bg-primary text-white flex ml-2"
+              >
+                {{ $t('shop.send_msg') }}
+                <eva-icon class="m-auto" name="email-outline" fill="#fff" />
+              </button>
+            </a>
           </div>
 
           <div>
@@ -199,5 +209,8 @@ export default {
 <style lang="scss" scoped>
 .category {
   @apply bg-grey-light text-white rounded-full px-2 py-1 m-1 flex-none select-none;
+}
+.disabled {
+  @apply bg-grey cursor-default;
 }
 </style>

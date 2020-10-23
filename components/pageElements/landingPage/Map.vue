@@ -19,7 +19,7 @@
           <img
             src="/icon.png"
             class="w-10 cursor-pointer z-10"
-            @click="$emit('selectShop', shop)"
+            @click="selectShop(shop)"
           />
           <div
             v-if="isSelected(shop._id)"
@@ -34,21 +34,13 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
 export default {
   props: {
-    shops: {
-      type: Array,
-      required: true,
-      default: () => [],
-    },
     token: {
       type: String,
       required: true,
       default: '',
-    },
-    selectedShop: {
-      type: Object,
-      default: () => {},
     },
   },
   data() {
@@ -57,7 +49,13 @@ export default {
       zoom: 5,
     }
   },
+  computed: {
+    ...mapGetters('shops', { shops: 'shops', selectedShop: 'selectedShop' }),
+  },
   methods: {
+    ...mapMutations('shops', {
+      selectShop: 'selectShop',
+    }),
     getShopCoordinates(shop) {
       return shop?.address?.geometry?.coordinates || [0, 0]
     },

@@ -20,7 +20,6 @@ export const state = () => ({
       name: 'German',
     },
   ],
-  shops: [],
   locale: 'en',
 })
 
@@ -40,9 +39,6 @@ export const mutations = {
       name,
     }
   },
-  setShops(state, shops) {
-    state.shops = shops
-  },
 }
 
 export const actions = {
@@ -60,20 +56,6 @@ export const actions = {
       console.log(error)
     }
   },
-
-  async getShops({ commit, dispatch, state }) {
-    const { position } = state
-    const { geohash, zoom } = position?.selectedMapPosition
-    const { rows: shops } = await this.$axios.$get(
-      `/api/shops/near/${geohash}`,
-      {
-        params: { zoom },
-      }
-    )
-    commit('setShops', shops)
-  },
 }
 
-export const getters = {
-  shops: (state) => state.shops,
-}
+export const getters = {}

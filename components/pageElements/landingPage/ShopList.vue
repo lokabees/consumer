@@ -26,22 +26,22 @@
         :key="shop._id"
         :shop="shop"
         :selected="shop._id === selectedShop._id"
-        @selectShop="$emit('selectShop', shop)"
+        @selectShop="selectShop(shop)"
       />
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 export default {
-  props: {
-    selectedShop: { type: Object, default: () => {} },
-  },
   computed: {
-    ...mapGetters(['shops']),
+    ...mapGetters('shops', { shops: 'shops', selectedShop: 'selectedShop' }),
   },
   methods: {
+    ...mapMutations('shops', {
+      selectShop: 'selectShop',
+    }),
     async search({ search }) {
       try {
         const location = await this.$axios.$get('/api/maps/suggest', {
