@@ -34,12 +34,6 @@ export const actions = {
         : null
     commit('selectShop', selectedShop)
   },
-  /*
-  selectShop({ rootState, commit }, shop) {
-    commit('selectShop', shop)
-    commit('setPosition', shop?.address?.geometry?.coordinates, { root: true })
-  },
-  */
 }
 
 export const getters = {

@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   props: {
     token: {
@@ -53,9 +53,6 @@ export default {
     ...mapGetters('shops', { shops: 'shops', selectedShop: 'selectedShop' }),
   },
   methods: {
-    ...mapMutations('shops', {
-      selectShop: 'selectShop',
-    }),
     getShopCoordinates(shop) {
       return shop?.address?.geometry?.coordinates || [0, 0]
     },

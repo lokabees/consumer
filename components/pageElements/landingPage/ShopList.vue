@@ -35,15 +35,12 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters('shops', { shops: 'shops', selectedShop: 'selectedShop' }),
   },
   methods: {
-    ...mapActions('shops', {
-      selectShop: 'selectShop',
-    }),
     async search({ search }) {
       try {
         const location = await this.$axios.$get('/api/maps/suggest', {

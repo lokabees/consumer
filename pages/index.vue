@@ -71,7 +71,7 @@ export default {
     }),
     selectShop(shop) {
       this.selectShopInStore(shop)
-      this.flyTo(shop.address)
+      if (Object.keys(this.map).length > 0) this.flyTo(shop.address)
     },
     onMapLoad({ map }) {
       const viewChanged = debounce(this.viewChanged, 800)

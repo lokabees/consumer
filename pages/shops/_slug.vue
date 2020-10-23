@@ -54,23 +54,15 @@
             <div class="w-2/3 font-bold">
               {{ $t('shop.now_open') }} 0:00-15:00
             </div>
-            <div class="flex-auto text-xs text-primary">
+            <div
+              v-for="deliveryOption in shop.delivery"
+              :key="deliveryOption"
+              class="flex-auto text-xs text-primary"
+            >
               <div class="h-8 flex items-center text-center">
-                <img src="/img/icons/delivery.svg" />
+                <img :src="deliveryOptions[deliveryOption].icon" />
               </div>
-              <span>{{ $t('shop.delivery') }}</span>
-            </div>
-            <div class="flex-auto text-xs text-primary text-center">
-              <div class="h-8 flex items-center">
-                <img src="/img/icons/pickup.svg" />
-              </div>
-              <span>{{ $t('shop.pickup') }}</span>
-            </div>
-            <div class="flex-auto text-xs text-primary text-center">
-              <div class="h-8 flex items-center">
-                <img src="/img/icons/ship.svg" />
-              </div>
-              <span>{{ $t('shop.ship') }}</span>
+              <span>{{ $t(deliveryOptions[deliveryOption].name) }}</span>
             </div>
           </div>
 
@@ -182,6 +174,20 @@ export default {
   data() {
     return {
       showDetails: false,
+      deliveryOptions: {
+        LD: {
+          name: 'shop.delivery',
+          icon: '/img/icons/delivery.svg',
+        },
+        PU: {
+          name: 'shop.pickup',
+          icon: '/img/icons/pickup.svg',
+        },
+        MD: {
+          name: 'shop.ship',
+          icon: '/img/icons/ship.svg',
+        },
+      },
     }
   },
   computed: {
