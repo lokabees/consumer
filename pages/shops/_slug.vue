@@ -90,7 +90,11 @@
                 class="bg-primary text-white flex mr-2"
               >
                 {{ $t('shop.call') }}
-                <eva-icon class="m-auto" name="phone-outline" fill="#fff" />
+                <eva-icon
+                  class="m-auto ml-1"
+                  name="phone-outline"
+                  fill="#fff"
+                />
               </button>
             </a>
             <a :href="`mailto:${shop.contact.email}`" target="_blank">
@@ -99,7 +103,11 @@
                 class="bg-primary text-white flex ml-2"
               >
                 {{ $t('shop.send_msg') }}
-                <eva-icon class="m-auto" name="email-outline" fill="#fff" />
+                <eva-icon
+                  class="m-auto ml-1"
+                  name="email-outline"
+                  fill="#fff"
+                />
               </button>
             </a>
           </div>

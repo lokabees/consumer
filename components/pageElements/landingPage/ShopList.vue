@@ -1,16 +1,17 @@
 <template>
   <div>
     <!-- search bar -->
-    <FormulateForm @submit="search">
+    <FormulateForm class="p-2" @submit="search">
       <div class="flex w-full">
         <FormulateInput
-          class="flex-grow"
+          class="flex-grow pr-1"
           type="text"
           name="search"
           :placeholder="$t('landing_page.shop_list.search_placeholder')"
           validation="required"
         />
         <FormulateInput
+          class="pl-1"
           type="submit"
           :label="$t('landing_page.shop_list.search')"
         />

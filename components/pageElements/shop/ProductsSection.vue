@@ -1,7 +1,7 @@
 <template>
   <div class="p-2">
     <div class="container py-20 max-w-4xl">
-      <h2 class="text-center mb-10 text-grey-dark">
+      <h2 class="text-center mb-10 text-grey-dark leading-tight">
         {{ $t('shop.product_highlights') }}
       </h2>
       <div v-if="products.length === 0" class="text-center">

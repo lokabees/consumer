@@ -1,13 +1,15 @@
 <template>
-  <div class="bg-primary-lightest py-10">
+  <div class="bg-primary-lightest py-10 p-5">
     <div class="container text-center">
-      <h2 class="pb-5">{{ $t('landing_page.sponsors.title') }}</h2>
+      <h2 class="pb-5 text-2xl text-grey-dark">
+        {{ $t('landing_page.sponsors.title') }}
+      </h2>
 
-      <div class="grid md:grid-cols-6 grid-cols-6 gap-6">
+      <div class="grid md:grid-cols-6 grid-cols-3 gap-6">
         <div
           v-for="sponsor in sponsors"
           :key="sponsor.name"
-          class="relative pb-1/2"
+          class="relative pb-1/2 max-w-xs"
         >
           <img
             class="absolute h-full w-full object-contain m-0"

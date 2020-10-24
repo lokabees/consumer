@@ -21,11 +21,11 @@
             class="absolute top-0 left-0 h-full object-cover w-full rounded-lg"
           />
         </div>
-        <div v-if="selected" class="w-1/2">
+        <div v-if="selected" class="w-1/2 overflow-hidden">
           <div class="flex">
             <span class="ml-auto bg-primary-lighter p-1 rounded-md">
-              {{ $t('landing_page.shop_list.open_until')
-              }}{{ timeToClose() }}</span
+              {{ $t('shop.open_today') }}:
+              {{ getOpeningTime() || $t('shop.closed') }}</span
             >
           </div>
           <p class="mt-2">{{ shop.description }}</p>
@@ -34,26 +34,30 @@
 
       <div class="w-full flex" :class="{ bottomRow: selected }">
         <div :class="{ 'w-1/2': selected }">
-          <h3 class="my-0 text-lg font-black">{{ shop.name }}</h3>
-          <p class="text-sm leading-tight">{{ getAddressString() }}</p>
+          <h3 class="my-0 text-lg text-grey-dark font-black">
+            {{ shop.name }}
+          </h3>
+          <p class="text-sm text-grey-dark leading-tight">
+            {{ getAddressString() }}
+          </p>
         </div>
         <div v-if="selected" class="flex w-1/2 items-center">
           <div class="flex flex-auto">
             <button v-if="selected" class="p-0 mx-auto">
-              <div>
-                <eva-icon class="mx-auto" name="phone-outline" />
+              <div class="flex">
+                <eva-icon class="mx-auto" fill="#2b2b2b" name="phone-outline" />
               </div>
-              <div class="text-sm">
+              <div class="text-sm text-grey-dark">
                 {{ $t('landing_page.shop_list.call') }}
               </div>
             </button>
           </div>
           <div class="flex flex-auto">
             <button v-if="selected" class="p-0 mx-auto">
-              <div>
-                <eva-icon class="mx-auto" name="email-outline" />
+              <div class="flex">
+                <eva-icon class="mx-auto" fill="#2b2b2b" name="email-outline" />
               </div>
-              <div class="text-sm">
+              <div class="text-sm text-grey-dark">
                 {{ $t('landing_page.shop_list.email') }}
               </div>
             </button>
@@ -118,31 +122,29 @@ export default {
     blur() {
       console.log('blur')
     },
-    timeToClose() {
-      /*
+    getOpeningTime() {
       const date = new Date()
-      const hr = date.getHours()
-      const min = date.getMinutes()
-      const weekday = this.weekdays[date.getDay() - 1]
-      const close = this.shop.parsedOpeningHours[weekday].close
-      const nextDay =
-        date.getDay() === 7 ? this.weekdays[0] : this.weekdays[date.getDay()]
-      const nextDayOpen = this.shop.parsedOpeningHours[nextDay].open
-      const timeToClose = close - (hr * 60 + min)
+      const day = date.getDay()
+      const weekdays = [
+        'sunday',
+        'monday',
+        'tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+      ]
+      const weekday = weekdays[day]
 
-      console.log(nextDay)
-      console.log(nextDayOpen)
+      // TODO opeingHours instead parsedOpeningHours
+      if (!this.shop.parsedOpeningHours) return null
+      const { open, close } = this.shop.parsedOpeningHours[weekday]
 
-      console.log(timeToClose)
+      // TODO breaks
 
-      if (timeToClose <= 0) return 'aktuell geschlossen'
-
-      const hoursToClose = ~~(timeToClose / 60)
-      const minsToClose = timeToClose % 60
-
-      console.log(hoursToClose)
-      console.log(minsToClose)
-      */
+      return open !== 'NaN:NaN' && close !== 'NaN:NaN'
+        ? `${open}-${close}`
+        : null
     },
   },
 }
