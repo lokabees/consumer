@@ -3,7 +3,7 @@
     <div class="container text-center">
       <h2 class="pb-5">{{ $t('landing_page.sponsors.title') }}</h2>
 
-      <div class="grid md:grid-cols-3 grid-cols-2">
+      <div class="grid md:grid-cols-6 grid-cols-6 gap-6">
         <div
           v-for="sponsor in sponsors"
           :key="sponsor.name"
@@ -32,27 +32,27 @@ export default {
       sponsors: [
         {
           name: 'heroku',
-          img: '/img/logos/heroku-logo-253x300.png',
+          img: '/img/logos/heroku-logo-800x600.png',
         },
         {
-          name: 'contentful',
+          name: 'commercetools',
           img: '/img/logos/commercetools-logo-300x152.png',
         },
         {
-          name: 'regierung',
+          name: 'figma',
           img: '/img/logos/figma-logo-150x150.png',
         },
         {
-          name: 'x',
+          name: 'phrase',
           img: '/img/logos/phrase-logo-300x119.png',
         },
         {
-          name: 'y',
+          name: 'contentful',
           img: '/img/logos/contentful-logo-300x62.png',
         },
         {
-          name: 'z',
-          img: '/img/logos/heroku-logo-253x300.png',
+          name: 'miro',
+          img: '/img/logos/miro-logo-640x400.png',
         },
       ],
     }
