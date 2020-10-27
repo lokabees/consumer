@@ -3,33 +3,24 @@
     <div class="container prose text-center py-10 px-2">
       <h2>{{ $t('landing_page.contact.title') }}</h2>
       <p>{{ $t('landing_page.contact.text') }}</p>
-      <FormulateForm @submit="submit">
-        <div class="flex w-full justify-center">
-          <div class="p-1">
-            <FormulateInput
-              type="text"
-              :placeholder="$t('landing_page.contact.placeholder')"
-              validation="required|email"
-            />
-          </div>
-          <div class="p-1">
-            <FormulateInput
-              type="submit"
-              :label="$t('landing_page.contact.button')"
-            />
-          </div>
+      <div class="flex w-full justify-center">
+        <div class="p-1">
+          <a
+            class="button primary"
+            href="http://eepurl.com/hc1I0v"
+            target="_blank"
+            style="color: white"
+          >
+            {{ $t('landing_page.contact.button') }}
+          </a>
         </div>
-      </FormulateForm>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  methods: {
-    submit() {
-      console.log('submit')
-    },
-  },
+  methods: {},
 }
 </script>
