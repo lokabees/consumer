@@ -4,7 +4,7 @@
       class="h-full"
       :center.sync="center"
       :access-token="token"
-      map-style="mapbox://styles/mapbox/streets-v10"
+      map-style="mapbox://styles/mapbox/streets-v11"
       :zoom="zoom"
       @load="$emit('load', $event)"
     >
@@ -35,6 +35,10 @@
 
 <script>
 import { mapGetters } from 'vuex'
+/*
+import Mapbox from 'mapbox-gl'
+import { MglMap, MglMarker } from 'vue-mapbox'
+*/
 export default {
   props: {
     token: {
@@ -52,6 +56,11 @@ export default {
   computed: {
     ...mapGetters('shops', { shops: 'shops', selectedShop: 'selectedShop' }),
   },
+  created() {
+    // We need to set mapbox-gl library here in order to use it in template
+    // this.mapbox = Mapbox
+  },
+
   methods: {
     getShopCoordinates(shop) {
       return shop?.address?.geometry?.coordinates || [0, 0]

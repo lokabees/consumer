@@ -16,14 +16,16 @@
           />
         </div>
         <div class="w-full md:w-1/2">
-          <Map
-            class="map"
-            :token="$config.mapboxKey"
-            :shops="shops"
-            :selected-shop="selectedShop"
-            @load="onMapLoad($event)"
-            @selectShop="selectShop($event)"
-          />
+          <no-ssr>
+            <Map
+              class="map"
+              :token="$config.mapboxKey"
+              :shops="shops"
+              :selected-shop="selectedShop"
+              @load="onMapLoad($event)"
+              @selectShop="selectShop($event)"
+            />
+          </no-ssr>
         </div>
       </div>
 
@@ -71,24 +73,25 @@ export default {
     }),
     selectShop(shop) {
       this.selectShopInStore(shop)
-      if (Object.keys(this.map).length > 0) this.flyTo(shop.address)
+      if (Object.keys(this.map).length > 0) this.flyTo(shop.address, 14)
     },
     onMapLoad({ map }) {
       const viewChanged = debounce(this.viewChanged, 800)
 
+      console.log('123')
       this.map = map
 
       this.map.on('zoomend', (e) => {
-        viewChanged(e)
+        // viewChanged(e)
       })
       this.map.on('moveend', (e) => {
         viewChanged(e)
       })
     },
-    flyTo(location) {
+    flyTo(location, zoom) {
       this.map.flyTo({
         center: location?.geometry?.coordinates || [52.268874, 10.52677],
-        zoom: 11,
+        zoom: zoom || 11,
       })
     },
     async viewChanged({ target }) {
@@ -116,12 +119,15 @@ export default {
           href:
             'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css',
         },
+        /*
         {
           rel: 'stylesheet',
           href:
             'https://cdn.jsdelivr.net/npm/vue-mapbox@latest/dist/vue-mapbox.css',
         },
+        */
       ],
+      /*
       script: [
         {
           src: 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js',
@@ -132,6 +138,7 @@ export default {
             'https://cdn.jsdelivr.net/npm/vue-mapbox@latest/dist/vue-mapbox.min.js',
         },
       ],
+      */
     }
   },
 }
