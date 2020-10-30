@@ -32,13 +32,3 @@
     --></div>
   </div>
 </template>
-
-<script>
-export default {
-  methods: {
-    submit() {
-      console.log('submit')
-    },
-  },
-}
-</script>

@@ -9,7 +9,7 @@
         <div
           v-for="sponsor in sponsors"
           :key="sponsor.name"
-          class="relative pb-1/2 max-w-xs"
+          class="relative pb-1/3 max-w-xs"
         >
           <img
             class="absolute h-full w-full object-contain m-0"

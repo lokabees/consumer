@@ -14,13 +14,22 @@
       <div
         class="flex flex-wrap content-center justify-end w-1/3 overflow-hidden"
       >
-        <button
-          class="h-full bg-primary text-white rounded-none"
-          @click="$router.push('/login')"
+        <a class="h-full" :href="`${shopOwnerUrl}/login`" target="_blank">
+          <button class="bg-primary h-full text-white rounded-none">
+            {{ $t('navbar.login') }}
+          </button></a
         >
-          {{ $t('navbar.login') }}
-        </button>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      shopOwnerUrl: process.env.SHOP_OWNER_URL,
+    }
+  },
+}
+</script>
