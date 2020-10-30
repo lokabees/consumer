@@ -28,7 +28,7 @@
               {{ getOpeningTime() || $t('shop.closed') }}</span
             >
           </div>
-          <p class="mt-2">{{ shop.description }}</p>
+          <p class="my-2 mx-4">{{ getDescription() }}</p>
         </div>
       </div>
 
@@ -122,6 +122,12 @@ export default {
     blur() {
       console.log('blur')
     },
+    getDescription() {
+      if (!this.shop || !this.shop.description) return
+      return this.shop.description?.length > 150
+        ? this.shop.description.slice(0, 150) + '...'
+        : this.shop.description
+    },
     getOpeningTime() {
       const date = new Date()
       const day = date.getDay()
@@ -137,8 +143,8 @@ export default {
       const weekday = weekdays[day]
 
       // TODO opeingHours instead parsedOpeningHours
-      if (!this.shop.parsedOpeningHours) return null
-      const { open, close } = this.shop.parsedOpeningHours[weekday]
+      if (!this.shop.openingHours) return null
+      const { open, close } = this.shop.openingHours[weekday]
 
       // TODO breaks
 

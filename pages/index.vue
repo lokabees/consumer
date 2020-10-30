@@ -6,16 +6,16 @@
           {{ $t('landing_page.title') }}
         </h1>
       </div>
-      <div class="md:flex">
+      <div class="lg:flex">
         <!--list all shops-->
-        <div class="w-full md:w-1/2 p-5">
+        <div class="w-full lg:w-1/2 p-5">
           <ShopList
             :selected-shop="selectedShop"
             @search="flyTo($event)"
             @selectShop="selectShop($event)"
           />
         </div>
-        <div class="w-full md:w-1/2">
+        <div class="w-full lg:w-1/2">
           <no-ssr>
             <Map
               class="map"
@@ -62,7 +62,7 @@ export default {
   },
   created() {
     // We need to set mapbox-gl library here in order to use it in template
-    this.map = null
+    this.map = {}
   },
   methods: {
     ...mapMutations('shops', {
@@ -76,7 +76,7 @@ export default {
     }),
     selectShop(shop) {
       this.selectShopInStore(shop)
-      if (Object.keys(this.map).length > 0) this.flyTo(shop.address, 14)
+      if (Object.keys(this.map).length > 0) this.flyTo(shop.address, 15)
     },
     onMapLoad({ map }) {
       const viewChanged = debounce(this.viewChanged, 800)
