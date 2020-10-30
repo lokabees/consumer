@@ -52,10 +52,6 @@ export default {
   data: () => ({
     selectedShop: {},
   }),
-  created() {
-    // We need to set mapbox-gl library here in order to use it in template
-    this.map = null
-  },
   computed: {
     ...mapState({
       selectedPosition: (state) => state.position.selectedMapPosition,
@@ -63,6 +59,10 @@ export default {
     ...mapGetters('shops', {
       shops: 'shops',
     }),
+  },
+  created() {
+    // We need to set mapbox-gl library here in order to use it in template
+    this.map = null
   },
   methods: {
     ...mapMutations('shops', {
