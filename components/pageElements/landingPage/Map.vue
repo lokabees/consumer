@@ -35,10 +35,6 @@
 
 <script>
 import { mapGetters } from 'vuex'
-/*
-import Mapbox from 'mapbox-gl'
-import { MglMap, MglMarker } from 'vue-mapbox'
-*/
 export default {
   props: {
     token: {
@@ -55,10 +51,6 @@ export default {
   },
   computed: {
     ...mapGetters('shops', { shops: 'shops', selectedShop: 'selectedShop' }),
-  },
-  created() {
-    // We need to set mapbox-gl library here in order to use it in template
-    // this.mapbox = Mapbox
   },
 
   methods: {

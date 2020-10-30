@@ -51,8 +51,11 @@ export default {
   },
   data: () => ({
     selectedShop: {},
-    map: {},
   }),
+  created() {
+    // We need to set mapbox-gl library here in order to use it in template
+    this.map = null
+  },
   computed: {
     ...mapState({
       selectedPosition: (state) => state.position.selectedMapPosition,
@@ -78,11 +81,10 @@ export default {
     onMapLoad({ map }) {
       const viewChanged = debounce(this.viewChanged, 800)
 
-      console.log('123')
       this.map = map
 
       this.map.on('zoomend', (e) => {
-        // viewChanged(e)
+        viewChanged(e)
       })
       this.map.on('moveend', (e) => {
         viewChanged(e)
