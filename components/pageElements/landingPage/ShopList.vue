@@ -35,7 +35,7 @@
     </div>
     <div class="flex py-4">
       <n-link
-        v-if="$route.fullPath === '/' && shopList().length !== 0"
+        v-if="$route.fullPath === '/' && shopList().length > 3"
         class="m-auto text-primary font-bold"
         :to="`/shops?search=${searchString}`"
         >{{ $t('landing_page.shop_list.show_more') }}</n-link

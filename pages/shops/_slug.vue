@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="relative">
-      <div class="relative flex justify-end pb-1/4 bg-primary-light">
+      <div class="relative flex justify-end pb-1/2 md:pb-1/4 bg-primary-light">
         <img
           v-if="coverImage"
           :src="coverImage"
@@ -17,19 +17,21 @@
         </div>
       </div>
 
-      <div
-        class="absolute bottom-0 mx-auto md:left-20 bg-white border-4 border-white -mb-12 md:w-1/3 pb-1/5"
-      >
-        <img
-          v-if="profileImage"
-          :src="profileImage"
-          class="absolute h-full w-full object-cover"
-        />
+      <div class="flex md:flex-none w-full justify-items-center">
+        <div
+          class="mx-auto relative md:absolute md:bottom-0 md:left-20 bg-white border-4 border-white md:-mb-16 -mb-5 w-2/3 md:w-1/3 md:pb-1/5 pb-1/3 -mt-1/4"
+        >
+          <img
+            v-if="profileImage"
+            :src="profileImage"
+            class="absolute h-full w-full object-cover"
+          />
 
-        <div v-else class="absolute flex h-full w-full bg-grey-lighter">
-          <div class="mx-auto my-auto text-center">
-            <img class="mx-auto pb-5" src="/img/icons/add-pic.svg" />
-            <span>{{ $t('dashboard.upload_profile_image') }}</span>
+          <div v-else class="absolute flex h-full w-full bg-grey-lighter">
+            <div class="mx-auto my-auto text-center">
+              <img class="mx-auto pb-5" src="/img/icons/add-pic.svg" />
+              <span>{{ $t('dashboard.upload_profile_image') }}</span>
+            </div>
           </div>
         </div>
       </div>
