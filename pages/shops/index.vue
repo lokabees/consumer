@@ -1,12 +1,15 @@
 <template>
-  <div class="container max-w-4xl min-h-screen">
-    <n-link to="/">zurück zur karte</n-link>
+  <div class="container max-w-4xl">
     <ShopList
       :selected-shop="selectedShop"
       @search="viewChanged($event)"
       @selectShop="selectShop($event)"
     />
-    <n-link to="/">zurück zur karte</n-link>
+    <div class="flex py-4">
+      <n-link class="m-auto text-primary font-bold" to="/">{{
+        $t('landing_page.shop_list.back_to_map')
+      }}</n-link>
+    </div>
   </div>
 </template>
 
@@ -54,7 +57,6 @@ export default {
         zoom: 11,
         name: '',
       }
-      console.log(position)
       this.setPosition(position)
       try {
         await this.getShops()

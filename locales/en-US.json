@@ -7,6 +7,8 @@
       "email": "E-Mail",
       "go_to_store": "Go to store",
       "search": "Search",
+      "show_more": "Show more +",
+      "back_to_map": "Back to the map",
       "search_placeholder": "Enter a location",
       "no_shops": "We have not found any shops in this area :-( Feel free to ask local shop owners to register their shop on lokabees."
     },

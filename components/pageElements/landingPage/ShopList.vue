@@ -33,12 +33,14 @@
         @selectShop="$emit('selectShop', shop)"
       />
     </div>
-
-    <n-link
-      v-if="$route.fullPath === '/' && shopList().length !== 0"
-      :to="`/shops?search=${searchString}`"
-      >show more</n-link
-    >
+    <div class="flex py-4">
+      <n-link
+        v-if="$route.fullPath === '/' && shopList().length !== 0"
+        class="m-auto text-primary font-bold"
+        :to="`/shops?search=${searchString}`"
+        >{{ $t('landing_page.shop_list.show_more') }}</n-link
+      >
+    </div>
   </div>
 </template>
 
