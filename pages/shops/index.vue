@@ -6,6 +6,7 @@
       @search="viewChanged($event)"
       @selectShop="selectShop($event)"
     />
+    <n-link to="/">zurück zur karte</n-link>
   </div>
 </template>
 
@@ -13,7 +14,7 @@
 import { mapMutations, mapActions } from 'vuex'
 export default {
   async asyncData({ query: { search }, store, $axios }) {
-    if (!search) return
+    if (!search || search === 'null') return
     try {
       const location = await $axios.$get('/api/maps/suggest', {
         params: { q: search },

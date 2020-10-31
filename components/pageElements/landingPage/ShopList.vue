@@ -22,11 +22,11 @@
     <div
       class="grid grid-flow-row-dense overflow-hidden sm:grid-cols-2 p-2 gap-2"
     >
-      <div v-if="shops.length === 0">
+      <div v-if="shopList().length === 0">
         <span>{{ $t('landing_page.shop_list.no_shops') }}</span>
       </div>
       <ShopSearchResult
-        v-for="shop in shops"
+        v-for="shop in shopList()"
         :key="shop._id"
         :shop="shop"
         :selected="shop._id === selectedShop._id"
@@ -34,7 +34,9 @@
       />
     </div>
 
-    <n-link v-if="$route.fullPath === '/'" :to="`/shops?search=${searchString}`"
+    <n-link
+      v-if="$route.fullPath === '/' && shopList().length !== 0"
+      :to="`/shops?search=${searchString}`"
       >show more</n-link
     >
   </div>
@@ -53,6 +55,7 @@ export default {
   },
   methods: {
     async search({ search }) {
+      if (!search || search === 'null') return
       try {
         const location = await this.$axios.$get('/api/maps/suggest', {
           params: { q: search },
@@ -61,6 +64,20 @@ export default {
       } catch (e) {
         console.error(e)
       }
+    },
+    shopList() {
+      if (this.$route.fullPath !== '/') return this.shops
+
+      const shopList = []
+      const length =
+        this.shops.filter((e) => e._id === this.selectedShop._id).length > 0
+          ? 3
+          : 4
+
+      this.shops.forEach((element) => {
+        if (shopList.length < length) shopList.push(element)
+      })
+      return shopList
     },
   },
 }

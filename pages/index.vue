@@ -114,24 +114,6 @@ export default {
       }
     },
   },
-  /*
-  head() {
-    return {
-      link: [
-        {
-          rel: 'stylesheet',
-          href:
-            'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css',
-        },
-        {
-          rel: 'stylesheet',
-          href:
-            'https://cdn.jsdelivr.net/npm/vue-mapbox@latest/dist/vue-mapbox.css',
-        },
-      ],
-    }
-  },
-  */
 }
 </script>
 <style lang="scss">
