@@ -4,6 +4,7 @@
     <FormulateForm class="p-2" @submit="search">
       <div class="flex w-full">
         <FormulateInput
+          v-model="searchString"
           class="flex-grow pr-1"
           type="text"
           name="search"
@@ -32,12 +33,21 @@
         @selectShop="$emit('selectShop', shop)"
       />
     </div>
+
+    <n-link v-if="$route.fullPath === '/'" :to="`/shops?search=${searchString}`"
+      >show more</n-link
+    >
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 export default {
+  data() {
+    return {
+      searchString: null,
+    }
+  },
   computed: {
     ...mapGetters('shops', { shops: 'shops', selectedShop: 'selectedShop' }),
   },

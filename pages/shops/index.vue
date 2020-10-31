@@ -1,5 +1,6 @@
 <template>
-  <div class="">
+  <div class="container max-w-4xl min-h-screen">
+    <n-link to="/">zurück zur karte</n-link>
     <ShopList
       :selected-shop="selectedShop"
       @search="viewChanged($event)"
@@ -11,6 +12,24 @@
 <script>
 import { mapMutations, mapActions } from 'vuex'
 export default {
+  async asyncData({ query: { search }, store, $axios }) {
+    if (!search) return
+    try {
+      const location = await $axios.$get('/api/maps/suggest', {
+        params: { q: search },
+      })
+      const position = {
+        latitude: location.geometry.coordinates[1],
+        longitude: location.geometry.coordinates[0],
+        zoom: 11,
+        name: '',
+      }
+      store.commit('setPosition', position)
+      await store.dispatch('shops/getShops')
+    } catch (e) {
+      console.error(e)
+    }
+  },
   data: () => ({
     selectedShop: {},
   }),

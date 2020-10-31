@@ -82,6 +82,7 @@ export default {
       const viewChanged = debounce(this.viewChanged, 800)
 
       this.map = map
+      this.map.scrollZoom.disable()
 
       this.map.on('zoomend', (e) => {
         viewChanged(e)
@@ -113,6 +114,7 @@ export default {
       }
     },
   },
+  /*
   head() {
     return {
       link: [
@@ -121,31 +123,19 @@ export default {
           href:
             'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css',
         },
-        /*
         {
           rel: 'stylesheet',
           href:
             'https://cdn.jsdelivr.net/npm/vue-mapbox@latest/dist/vue-mapbox.css',
         },
-        */
       ],
-      /*
-      script: [
-        {
-          src: 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js',
-        },
-        {
-          type: 'text/javascript',
-          src:
-            'https://cdn.jsdelivr.net/npm/vue-mapbox@latest/dist/vue-mapbox.min.js',
-        },
-      ],
-      */
     }
   },
+  */
 }
 </script>
-<style scoped>
+<style lang="scss">
+@import '../node_modules/mapbox-gl/dist/mapbox-gl.css';
 .map {
   height: 620px;
 }

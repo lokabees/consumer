@@ -6,8 +6,10 @@
       :access-token="token"
       map-style="mapbox://styles/mapbox/streets-v11"
       :zoom="zoom"
+      :attribution-control="false"
       @load="$emit('load', $event)"
     >
+      <MglNavigationControl />
       <MglMarker
         v-for="(shop, key) in shops"
         :key="key"
