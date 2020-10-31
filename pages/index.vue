@@ -118,7 +118,8 @@ export default {
 </script>
 <style lang="scss">
 @import '../node_modules/mapbox-gl/dist/mapbox-gl.css';
+
 .map {
-  height: 620px;
+  min-height: 500px;
 }
 </style>

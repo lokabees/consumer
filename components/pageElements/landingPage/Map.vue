@@ -1,7 +1,7 @@
 <template>
   <div class="h-full">
     <MglMap
-      class="h-full"
+      class="map"
       :center.sync="center"
       :access-token="token"
       map-style="mapbox://styles/mapbox/streets-v11"
