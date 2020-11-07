@@ -27,6 +27,16 @@
       "subtext": "Would you like to offer your support? Email us:"
     }
   },
+  "contact": {
+    "title": "Contact us",
+    "name_label": "Name",
+    "name_placeholder": "Isabelle Mademoiselle",
+    "email_label": "Email",
+    "email_placeholder": "examplemail@example.com",
+    "text_label": "How can we help you?",
+    "text_placeholder": "Write your message here ...",
+    "submit_label": "Contact Lokabees"
+  },
   "navbar": {
     "login": "Login"
   },
