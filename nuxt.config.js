@@ -35,6 +35,7 @@ export default {
    ** also https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
    */
   publicRuntimeConfig: {
+    formSpreeURL: process.env.FORMSPREE_URL,
     mapboxKey: process.env.MAPBOX_KEY,
   },
   privateRuntimeConfig: {
@@ -52,6 +53,7 @@ export default {
   plugins: [
     '~/plugins/modules/i18n',
     '~/plugins/modules/vue-formulate',
+    '~/plugins/services/error-handler',
     { src: '~/plugins/modules/eva-icons', ssr: false },
     { src: '~/plugins/modules/eva-icons', ssr: false },
     { src: '~/plugins/modules/mapbox', ssr: false },

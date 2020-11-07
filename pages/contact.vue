@@ -1,5 +1,10 @@
 <template>
   <div class="container max-w-2xl py-8">
+    <Modal :visible="isVisible" :message="$t('contact.success')">
+      <template v-slot:buttons>
+        <button @click="isVisible = false">{{ $t('contact.close') }}</button>
+      </template>
+    </Modal>
     <h1>{{ $t('contact.title') }}</h1>
     <FormulateForm v-model="contact" @submit="submit">
       <FormulateInput
@@ -33,11 +38,17 @@ export default {
   data() {
     return {
       contact: {},
+      isVisible: false,
     }
   },
   methods: {
-    submit() {
-      console.log(this.contact)
+    async submit() {
+      try {
+        await this.$axios.post(this.$config.formSpreeURL, this.contact)
+        this.isVisible = true
+      } catch (error) {
+        this.$errorHandler({ prefix: 'contact', suffix: 'internal', error })
+      }
     },
   },
 }

@@ -1,4 +1,7 @@
 {
+  "general": {
+    "ok": "Ok"
+  },
   "landing_page": {
     "title": "Find local products from retailers near you!",
     "shop_list": {
@@ -28,6 +31,11 @@
     }
   },
   "contact": {
+    "errors": {
+      "internal": "Sorry, something went wrong!"
+    },
+    "success": "Thanks for reaching out!",
+    "close": "Close",
     "title": "Contact us!",
     "name_label": "Name",
     "name_placeholder": "Isabelle Mademoiselle",

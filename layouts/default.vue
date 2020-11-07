@@ -1,5 +1,6 @@
 <template>
   <div class="flex flex-col min-h-screen">
+    <ErrorModal />
     <navigation class="md:block sticky top-0 z-30" />
     <CookiesConsent />
     <nuxt />
