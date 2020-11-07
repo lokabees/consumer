@@ -37,7 +37,10 @@ export default {
   publicRuntimeConfig: {
     mapboxKey: process.env.MAPBOX_KEY,
   },
-  privateRuntimeConfig: {},
+  privateRuntimeConfig: {
+    ctfAccessTokem: process.env.CTF_CDA_ACCESS_TOKEN,
+    ctfSpaceId: process.env.CTF_SPACE_ID,
+  },
   /*
    ** Global CSS
    */
@@ -49,6 +52,7 @@ export default {
   plugins: [
     '~/plugins/modules/i18n',
     '~/plugins/modules/vue-formulate',
+    { src: '~/plugins/modules/eva-icons', ssr: false },
     { src: '~/plugins/modules/eva-icons', ssr: false },
     { src: '~/plugins/modules/mapbox', ssr: false },
   ],
@@ -79,8 +83,17 @@ export default {
     '@nuxt/content',
     // Doc: https://github.com/nuxt-community/google-fonts-module
     '@nuxtjs/google-fonts',
+    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/markdownit
+    '@nuxtjs/markdownit',
   ],
-
+  /**
+   ** Markdown configuration
+   */
+  markdownit: {
+    preset: 'default',
+    breaks: true,
+    injected: true,
+  },
   /*
    ** google fonts module configuration
    ** See https://github.com/nuxt-community/google-fonts-module#options

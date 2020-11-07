@@ -14,7 +14,7 @@
         type="text"
         :placeholder="$t('contact.email_placeholder')"
         :label="$t('contact.email_label')"
-        validation="required|email"
+        validation="bail|required|email"
       />
       <FormulateInput
         name="text"
