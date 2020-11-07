@@ -24,11 +24,6 @@
 
 <script>
 export default {
-  asyncData({ $cookies }) {
-    return {
-      cookiesAllowed: $cookies.get('cookies-allowed'),
-    }
-  },
   data() {
     return { cookiesAllowed: true }
   },
