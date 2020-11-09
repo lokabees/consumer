@@ -83,6 +83,7 @@ export default {
 
       this.map = map
       this.map.scrollZoom.disable()
+      if (this.map.tap) this.map.tap.disable()
 
       this.map.on('zoomend', (e) => {
         viewChanged(e)
