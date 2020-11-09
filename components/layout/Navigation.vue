@@ -16,7 +16,7 @@
       >
         <a class="h-full" :href="`${shopOwnerUrl}/auth/login`" target="_blank">
           <button class="bg-primary h-full text-white rounded-none">
-            {{ $t('navbar.login') }}
+            {{ $t('navbar.shop_owners') }}
           </button></a
         >
       </div>

@@ -46,7 +46,9 @@
     "submit_label": "Contact Lokabees"
   },
   "navbar": {
-    "login": "Login"
+    "login": "Login",
+    "shop_owners": "Shop owners",
+    "register_shop": "Register shop"
   },
   "shop": {
     "open_today": "Open today",
