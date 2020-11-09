@@ -122,5 +122,6 @@ export default {
 
 .map {
   min-height: 500px;
+  pointer-events: none;
 }
 </style>
