@@ -29,17 +29,17 @@
     }
   },
   "general": {
-    "ok": "Ok"
+    "ok": "Okay"
   },
   "landing_page": {
     "about": {
-      "text": "Lokabees - the initiative for a colorful neighborhood and the digitization of local retail. The team consists of around 20 committed specialists from the areas of development, UX design, marketing and business development as well as numerous other supporters who work together on lokabees.",
+      "text": "Lokabees - the initiative for a colorful neighborhood and the digitization of local retail. The team consists of around 20 committed specialists from the areas of development, User Experience, marketing and business development as well as numerous other supporters who work together on lokabees.",
       "title": "About Lokabees"
     },
     "contact": {
       "button": "Join the newsletter",
       "placeholder": "Your email address",
-      "text": "Stay updated for new features, new shops, local updates and more with our newsletter!",
+      "text": "Get the latest infos about new features, new shops, local updates and more by joining our newsletter!",
       "title": "Let's stay in contact"
     },
     "shop_list": {
@@ -70,7 +70,7 @@
     "hide_details": "Hide details",
     "now_closed": "Closed now",
     "now_open": "Open now",
-    "no_products": "Unfortunately, the shop owner did not create any products yet.",
+    "no_products": "Unfortunately the shop owner has not added any products yet.",
     "open_today": "Open today",
     "pickup": "Pickup",
     "product_highlights": "Product Highlights",
