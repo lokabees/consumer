@@ -29,11 +29,11 @@
     }
   },
   "general": {
-    "ok": "Ok"
+    "ok": "Okay"
   },
   "landing_page": {
     "about": {
-      "text": "Lokabees - die Initiative für eine farbenfrohe Nachbarschaft und die Digitalisierung des lokalen Einzelhandels. Das Team besteht aus rund 20 engagierten Spezialisten aus den Bereichen Entwicklung, UX-Design, Marketing und Business Development sowie zahlreichen weiteren Unterstützern, die gemeinsam an Lokabees arbeiten.",
+      "text": "Lokabees - die Initiative für eine farbenfrohe Nachbarschaft und die Digitalisierung des lokalen Einzelhandels. Das Team besteht aus rund 20 engagierten Spezialisten aus den Bereichen Entwicklung, User Experience, Marketing und Business Development sowie zahlreichen weiteren Unterstützern, die gemeinsam an Lokabees arbeiten.",
       "title": "Über lokabees"
     },
     "contact": {
