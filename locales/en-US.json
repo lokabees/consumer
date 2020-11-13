@@ -8,10 +8,10 @@
     },
     "name_label": "Name",
     "name_placeholder": "Isabelle Mademoiselle",
-    "submit_label": "Contact Lokabees",
+    "submit_label": "Contact lokabees",
     "success": "Thanks for reaching out!",
     "text_label": "How can we help you?",
-    "text_placeholder": "Write your message here ...",
+    "text_placeholder": "Write your message here...",
     "title": "Contact us!"
   },
   "cookies_consent": {
@@ -57,7 +57,7 @@
       "subtext": "Would you like to offer your support? Email us:",
       "title": "Our sponsors"
     },
-    "title": "Find local products from retailers near you!"
+    "title": "find local products from retails near to you"
   },
   "navbar": {
     "login": "Login"
@@ -70,7 +70,7 @@
     "hide_details": "Hide details",
     "now_closed": "Closed now",
     "now_open": "Open now",
-    "no_products": "Unfortunately, the shop owner did not upload any products yet.",
+    "no_products": "Unfortunately, the shop owner did not create any products yet.",
     "open_today": "Open today",
     "pickup": "Pickup",
     "product_highlights": "Product Highlights",
