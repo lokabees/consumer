@@ -11,14 +11,12 @@
 </template>
 
 <script>
-import { createClient } from '~/plugins/modules/contentful.server.js'
-const client = createClient()
-
 export default {
   name: 'Imprint',
-  async asyncData({ params, $config, $errorHandler }) {
+  async asyncData({ $errorHandler, $contentful }) {
     try {
-      const { fields } = await client.getEntry('383HaOpwTeaZpMV4nvJVTp')
+      const { fields } = await $contentful('383HaOpwTeaZpMV4nvJVTp')
+
       return { content: fields }
     } catch (error) {
       $errorHandler(error)

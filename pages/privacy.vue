@@ -11,14 +11,11 @@
 </template>
 
 <script>
-import { createClient } from '~/plugins/modules/contentful.server.js'
-const client = createClient()
-
 export default {
   name: 'Privacy',
-  async asyncData({ params, $config, $errorHandler }) {
+  async asyncData({ $errorHandler, $contentful }) {
     try {
-      const { fields } = await client.getEntry('49J54qlvRwgiHzdXm0qlKU')
+      const { fields } = await $contentful('49J54qlvRwgiHzdXm0qlKU')
       return { content: fields }
     } catch (error) {
       $errorHandler(error)
