@@ -35,7 +35,10 @@
     </div>
     <div class="flex py-4">
       <n-link
-        v-if="$route.fullPath === '/' && shopList().length > 3"
+        v-if="
+          ($route.fullPath === '/' && shopList().length > 3) ||
+          (shopList().length > 2 && shopSelected)
+        "
         class="m-auto text-primary font-bold"
         :to="`/shops?search=${searchString}`"
         >{{ $t('landing_page.shop_list.show_more') }}</n-link
@@ -50,6 +53,7 @@ export default {
   data() {
     return {
       searchString: null,
+      shopSelected: false,
     }
   },
   computed: {
@@ -71,10 +75,11 @@ export default {
       if (this.$route.fullPath !== '/') return this.shops
 
       const shopList = []
-      const length =
+
+      this.shopSelected =
         this.shops.filter((e) => e._id === this.selectedShop._id).length > 0
-          ? 3
-          : 4
+
+      const length = this.shopSelected ? 3 : 4
 
       this.shops.forEach((element) => {
         if (shopList.length < length) shopList.push(element)
