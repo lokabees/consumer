@@ -14,9 +14,9 @@
       <div
         class="flex flex-wrap content-center justify-end w-1/3 overflow-hidden"
       >
-        <a class="h-full" :href="`${shopOwnerUrl}/auth/login`" target="_blank">
+        <a class="h-full" :href="`${shopOwnerUrl}/auth/signup`" target="_blank">
           <button class="bg-primary h-full text-white rounded-none">
-            {{ $t('navbar.shop_owners') }}
+            {{ $t('navbar.register_shop') }}
           </button></a
         >
       </div>
