@@ -54,8 +54,7 @@
         <div class="md:w-1/2 py-3 mb-5">
           <div class="flex mt-5 mb-3">
             <div class="w-2/3 font-bold">
-              {{ $t('shop.open_today') }}:
-              {{ getOpeningTime() || $t('shop.closed') }}
+              {{ shop.isOpen ? $t('shop.now_open') : $t('shop.now_closed') }}
             </div>
             <div
               v-for="deliveryOption in shop.delivery"

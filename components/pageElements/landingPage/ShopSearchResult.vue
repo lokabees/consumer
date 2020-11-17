@@ -24,8 +24,9 @@
         <div v-if="selected" class="w-1/2 overflow-hidden">
           <div class="flex">
             <span class="ml-auto bg-primary-lighter p-1 rounded-md">
-              {{ $t('shop.open_today') }}:
-              {{ getOpeningTime() || $t('shop.closed') }}</span
+              {{
+                shop.isOpen ? $t('shop.now_open') : $t('shop.now_closed')
+              }}</span
             >
           </div>
           <p class="my-2 mx-4">{{ getDescription() }}</p>
