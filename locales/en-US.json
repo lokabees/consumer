@@ -1,49 +1,63 @@
 {
+  "contact": {
+    "close": "Close",
+    "email_label": "Email",
+    "email_placeholder": "examplemail@example.com",
+    "errors": {
+      "internal": "Sorry, something went wrong!"
+    },
+    "name_label": "Name",
+    "name_placeholder": "Isabelle Mademoiselle",
+    "submit_label": "Contact Lokabees",
+    "success": "Thanks for reaching out!",
+    "text_label": "How can we help you?",
+    "text_placeholder": "Write your message here ...",
+    "title": "Contact us!"
+  },
+  "cookies_consent": {
+    "accept": "Accept",
+    "more_info": "You can find more information on how we use cookies in our ",
+    "privacy": "Privacy Policy",
+    "text": "We use cookies on our website. Some of them are essential, while others help us to improve this website and your experience."
+  },
+  "footer": {
+    "links": {
+      "contact": "Contact",
+      "imprint": "Imprint",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use"
+    }
+  },
   "general": {
     "ok": "Ok"
   },
   "landing_page": {
-    "title": "Find local products from retailers near you!",
+    "about": {
+      "text": "Lokabees - the initiative for a colorful neighborhood and the digitization of local retail. The team consists of around 20 committed specialists from the areas of development, UX design, marketing and business development as well as numerous other supporters who work together on lokabees.",
+      "title": "About Lokabees"
+    },
+    "contact": {
+      "button": "Join the newsletter",
+      "placeholder": "Your email address",
+      "text": "Stay updated for new features, new shops, local updates and more with our newsletter!",
+      "title": "Let's stay in contact"
+    },
     "shop_list": {
-      "open_until": "Open until",
+      "back_to_map": "Back to the map",
       "call": "Call",
       "email": "E-Mail",
       "go_to_store": "Go to store",
+      "no_shops": "We have not found any shops in this area :-( Feel free to ask local shop owners to register their shop on lokabees.",
+      "open_until": "Open until",
       "search": "Search",
-      "show_more": "Show more +",
-      "back_to_map": "Back to the map",
       "search_placeholder": "Enter a location",
-      "no_shops": "We have not found any shops in this area :-( Feel free to ask local shop owners to register their shop on lokabees."
-    },
-    "about": {
-      "title": "About Lokabees",
-      "text": "Lokabees - the initiative for a colorful neighborhood and the digitization of local retail. The team consists of around 20 committed specialists from the areas of development, UX design, marketing and business development as well as numerous other supporters who work together on lokabees."
-    },
-    "contact": {
-      "title": "Let's stay in contact",
-      "text": "Stay updated for new features, new shops, local updates and more with our newsletter!",
-      "placeholder": "Your email address",
-      "button": "Join the newsletter"
+      "show_more": "Show more +"
     },
     "sponsors": {
-      "title": "Our sponsors",
-      "subtext": "Would you like to offer your support? Email us:"
-    }
-  },
-  "contact": {
-    "errors": {
-      "internal": "Sorry, something went wrong!"
+      "subtext": "Would you like to offer your support? Email us:",
+      "title": "Our sponsors"
     },
-    "success": "Thanks for reaching out!",
-    "close": "Close",
-    "title": "Contact us!",
-    "name_label": "Name",
-    "name_placeholder": "Isabelle Mademoiselle",
-    "email_label": "Email",
-    "email_placeholder": "examplemail@example.com",
-    "text_label": "How can we help you?",
-    "text_placeholder": "Write your message here ...",
-    "submit_label": "Contact Lokabees"
+    "title": "Find local products from retailers near you!"
   },
   "navbar": {
     "login": "Login",
@@ -51,35 +65,21 @@
     "register_shop": "Register shop"
   },
   "shop": {
-    "open_today": "Open today",
-    "closed": "Closed",
-    "now_open": "Open now",
-    "now_closed": "Closed now",
-    "delivery": "Delivery",
-    "ship": "Ship",
-    "pickup": "Pickup",
-    "call": "Call",
-    "send_msg": "Send Message",
-    "product_highlights": "Product Highlights",
     "address": "Address",
-    "website": "Website",
-    "whatsapp": "WhatsApp",
-    "show_details": "Show more",
+    "call": "Call",
+    "closed": "Closed",
+    "delivery": "Delivery",
     "hide_details": "Hide details",
-    "no_products": "Unfortunately, the shop owner did not upload any products yet."
-  },
-  "footer": {
-    "links": {
-      "privacy": "Privacy Policy",
-      "imprint": "Imprint",
-      "terms": "Terms of Use",
-      "contact": "Contact"
-    }
-  },
-  "cookies_consent": {
-    "text": "We use cookies on our website. Some of them are essential, while others help us to improve this website and your experience.",
-    "accept": "Accept",
-    "more_info": "You can find more information on how we use cookies in our ",
-    "privacy": "Privacy Policy"
+    "now_closed": "Closed now",
+    "now_open": "Open now",
+    "no_products": "Unfortunately, the shop owner did not upload any products yet.",
+    "open_today": "Open today",
+    "pickup": "Pickup",
+    "product_highlights": "Product Highlights",
+    "send_msg": "Send Message",
+    "ship": "Ship",
+    "show_details": "Show more",
+    "website": "Website",
+    "whatsapp": "WhatsApp"
   }
 }
