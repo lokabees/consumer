@@ -37,6 +37,7 @@ export default {
   publicRuntimeConfig: {
     formSpreeURL: process.env.FORMSPREE_URL,
     mapboxKey: process.env.MAPBOX_KEY,
+    appUrl: process.env.APP_URL,
   },
   privateRuntimeConfig: {
     ctfAccessTokem: process.env.CTF_CDA_ACCESS_TOKEN,

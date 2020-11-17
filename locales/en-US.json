@@ -1,4 +1,14 @@
 {
+  "error": {
+    "continue_home": "You can continue on our homepage or try reloading the page again.",
+    "error_occured": "Ups. An error occured.",
+    "errors": {
+      "500": "An unknown error occured. Try reloading the page and login again.",
+      "504": "We can not reach the server. Please try again later or report the issue to hello@lokabees.com",
+      "unspecific": "Ups. Something went wrong. Please try again or contact our support if the request keeps failing."
+    },
+    "go_home": "Go to Homepage"
+  },
   "contact": {
     "close": "Close",
     "email_label": "Email",
