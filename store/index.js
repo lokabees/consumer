@@ -14,21 +14,17 @@ export const state = () => ({
     {
       code: 'en',
       name: 'English',
+      icon: '/img/icons/united-states.png',
     },
     {
       code: 'de',
       name: 'German',
+      icon: '/img/icons/germany.png',
     },
   ],
-  locale: 'en',
 })
 
 export const mutations = {
-  setLang(state, locale) {
-    if (state.locales.find((el) => el.code === locale)) {
-      state.locale = locale
-    }
-  },
   setPosition(state, { latitude, longitude, name, zoom }) {
     const userGeohash = geohash.encode(latitude, longitude)
     state.position.selectedMapPosition = {
@@ -58,4 +54,6 @@ export const actions = {
   },
 }
 
-export const getters = {}
+export const getters = {
+  locales: (state) => state.locales,
+}
