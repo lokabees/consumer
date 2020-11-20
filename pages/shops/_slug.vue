@@ -17,7 +17,9 @@
         </div>
       </div>
 
-      <div class="flex md:flex-none w-full justify-items-center">
+      <div
+        class="flex md:flex-none w-full justify-items-center bg-primary-lightest"
+      >
         <div
           class="mx-auto relative md:absolute md:bottom-0 md:left-20 bg-white border-4 border-white md:-mb-16 -mb-5 w-2/3 md:w-1/3 md:pb-1/5 pb-1/3 -mt-1/4"
         >

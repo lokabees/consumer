@@ -1,6 +1,6 @@
 <template>
   <div class="container prose mb-5 mt-5 md:mt-24">
-    <div class="card w-full markdown-body">
+    <div class="card w-full markdown-body p-2">
       <div v-if="content.content" v-html="$md.render(content.content)"></div>
       <div
         v-if="content.contentMore"
