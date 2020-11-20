@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed">
+  <div class="fixed z-50">
     <div v-show="!cookiesAllowed && !isLegalPage()" class="modal-bg" />
     <transition name="modalAnimation">
       <div v-show="!cookiesAllowed && !isLegalPage()" class="modal-wrapper">
