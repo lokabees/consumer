@@ -17,7 +17,7 @@
           }"
         >
           <img
-            :src="shop.images.cover.url"
+            :src="coverImage"
             class="absolute top-0 left-0 h-full object-cover w-full rounded-lg"
           />
         </div>
@@ -114,6 +114,13 @@ export default {
         'sunday',
       ],
     }
+  },
+  computed: {
+    coverImage() {
+      if (this.shop?.images?.cover?.url === 'cdn-link')
+        return '/img/shop/cover_placeholder.jpg'
+      return this.shop?.images?.cover?.url
+    },
   },
   methods: {
     getAddressString() {
