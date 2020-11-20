@@ -209,11 +209,13 @@ export default {
   },
   computed: {
     coverImage() {
-      if (this.shop?.images?.cover?.url === 'cdn-link') return null
+      if (this.shop?.images?.cover?.url === 'cdn-link')
+        return '/img/shop/cover_placeholder.jpg'
       return this.shop?.images?.cover?.url
     },
     profileImage() {
-      if (this.shop?.images?.profile?.url === 'cdn-link') return null
+      if (this.shop?.images?.profile?.url === 'cdn-link')
+        return '/img/shop/profile_placeholder.jpg'
       return this.shop?.images?.profile?.url
     },
   },
