@@ -11,7 +11,7 @@
     >
       <MglNavigationControl />
       <MglMarker
-        v-for="(shop, key) in shops"
+        v-for="(shop, key) in shopsReversed()"
         :key="key"
         class="cursor-pointer"
         :coordinates="getShopCoordinates(shop)"
@@ -20,12 +20,12 @@
         <div slot="marker" class="flex">
           <img
             src="/icon.png"
-            class="w-10 cursor-pointer z-10"
+            class="w-10 h-10 cursor-pointer z-10"
             @click="$emit('selectShop', shop)"
           />
           <div
             v-if="isSelected(shop._id)"
-            class="absolute pl-10 pr-2 bg-white z-5 shadow-md rounded"
+            class="absolute pl-10 pr-2 bg-white shadow-md rounded"
           >
             <span class="font-bold">{{ shop.name }}</span>
           </div>
@@ -56,6 +56,11 @@ export default {
   },
 
   methods: {
+    shopsReversed() {
+      const array = []
+      this.shops.forEach((shop) => array.unshift(shop))
+      return array
+    },
     getShopCoordinates(shop) {
       return shop?.address?.geometry?.coordinates || [0, 0]
     },
