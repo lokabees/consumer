@@ -1,19 +1,16 @@
 <template>
   <div
-    class="col-span-1"
+    class="col-span-2 sm:col-span-1"
     :class="{ active: selected }"
-    @click="$emit('selectShop', shop)"
-    @blur="blur"
+    @click="selectShop"
   >
     <div>
-      <div class="flex w-full">
+      <div class="sm:flex w-full">
         <div
-          class="relative"
+          class="relative pb-1/2 w-full"
           :class="{
-            'w-1/2': selected,
-            'pb-1/4': selected,
-            'pb-1/2': !selected,
-            'w-full': !selected,
+            'sm:w-1/2': selected,
+            'sm:pb-1/4': selected,
           }"
         >
           <img
@@ -21,7 +18,7 @@
             class="absolute top-0 left-0 h-full object-cover w-full rounded-lg"
           />
         </div>
-        <div v-if="selected" class="w-1/2 overflow-hidden">
+        <div v-if="selected" class="sm:w-1/2 overflow-hidden">
           <div class="flex">
             <span class="ml-auto bg-primary-lighter p-1 rounded-md">
               {{
@@ -34,7 +31,7 @@
       </div>
 
       <div class="w-full flex" :class="{ bottomRow: selected }">
-        <div :class="{ 'w-1/2': selected }">
+        <div :class="{ 'sm:w-1/2': selected }">
           <h3 class="my-0 text-lg text-grey-dark font-black">
             {{ shop.name }}
           </h3>
@@ -42,26 +39,54 @@
             {{ getAddressString() }}
           </p>
         </div>
-        <div v-if="selected" class="flex w-1/2 items-center">
+        <div v-if="selected" class="flex sm:w-1/2 items-center">
           <div class="flex flex-auto">
-            <button v-if="selected" class="p-0 mx-auto">
-              <div class="flex">
-                <eva-icon class="mx-auto" fill="#2b2b2b" name="phone-outline" />
-              </div>
-              <div class="text-sm text-grey-dark">
-                {{ $t('landing_page.shop_list.call') }}
-              </div>
-            </button>
+            <a
+              v-if="selected"
+              :href="`tel:${shop.contact.phone}`"
+              target="_blank"
+              class="p-0 mx-auto"
+              :class="{ 'pointer-events-none': !shop.contact.phone }"
+            >
+              <button
+                v-if="selected"
+                class="p-0 mx-auto"
+                :class="{ disabled: !shop.contact.phone }"
+              >
+                <div class="flex">
+                  <eva-icon
+                    class="mx-auto"
+                    fill="#2b2b2b"
+                    name="phone-outline"
+                  />
+                </div>
+                <div class="hidden sm:block text-sm text-grey-dark">
+                  {{ $t('landing_page.shop_list.call') }}
+                </div>
+              </button>
+            </a>
           </div>
           <div class="flex flex-auto">
-            <button v-if="selected" class="p-0 mx-auto">
-              <div class="flex">
-                <eva-icon class="mx-auto" fill="#2b2b2b" name="email-outline" />
-              </div>
-              <div class="text-sm text-grey-dark">
-                {{ $t('landing_page.shop_list.email') }}
-              </div>
-            </button>
+            <a
+              v-if="selected"
+              :href="`mailto:${shop.contact.email}`"
+              target="_blank"
+              class="p-0 mx-auto"
+              :class="{ 'pointer-events-none': !shop.contact.email }"
+            >
+              <button :class="{ disabled: !shop.contact.email }">
+                <div class="flex">
+                  <eva-icon
+                    class="mx-auto"
+                    fill="#2b2b2b"
+                    name="email-outline"
+                  />
+                </div>
+                <div class="hidden sm:block text-sm text-grey-dark">
+                  {{ $t('landing_page.shop_list.email') }}
+                </div>
+              </button>
+            </a>
           </div>
           <div class="flex-auto">
             <button
@@ -127,8 +152,8 @@ export default {
       const { street, city, postcode, number } = this.shop.address
       return `${street} ${number}, ${postcode} ${city}`
     },
-    blur() {
-      console.log('blur')
+    selectShop() {
+      if (!this.selected) this.$emit('selectShop', this.shop)
     },
     getDescription() {
       if (!this.shop || !this.shop.description) return

@@ -87,7 +87,10 @@
           </div>
 
           <div class="flex mt-8">
-            <a :href="`tel:${shop.contact.phone}`">
+            <a
+              :class="{ 'pointer-events-none': !shop.contact.phone }"
+              :href="`tel:${shop.contact.phone}`"
+            >
               <button
                 :class="{ disabled: !shop.contact.phone }"
                 class="bg-primary text-white flex mr-2"
@@ -100,7 +103,12 @@
                 />
               </button>
             </a>
-            <a :href="`mailto:${shop.contact.email}`" target="_blank">
+
+            <a
+              :class="{ 'pointer-events-none': !shop.contact.email }"
+              :href="`mailto:${shop.contact.email}`"
+              target="_blank"
+            >
               <button
                 :class="{ disabled: !shop.contact.email }"
                 class="bg-primary text-white flex ml-2"
@@ -226,27 +234,6 @@ export default {
     getAddressString() {
       const { postcode, city, street, number } = this.shop.address
       return `${street} ${number}, ${postcode} ${city}`
-    },
-    getOpeningTime() {
-      const date = new Date()
-      const day = date.getDay()
-      const weekdays = [
-        'sunday',
-        'monday',
-        'tuesday',
-        'wednesday',
-        'thursday',
-        'friday',
-        'saturday',
-      ]
-      const weekday = weekdays[day]
-      const { open, close } = this.shop.openingHours[weekday]
-
-      // TODO breaks
-
-      return open !== 'NaN:NaN' && close !== 'NaN:NaN'
-        ? `${open}-${close}`
-        : null
     },
   },
 }
