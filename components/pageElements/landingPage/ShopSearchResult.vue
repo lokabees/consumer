@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div class="w-full flex" :class="{ bottomRow: selected }">
+      <div class="w-full flex py-2" :class="{ bottomRow: selected }">
         <div :class="{ 'sm:w-1/2': selected }">
           <h3 class="my-0 text-lg text-grey-dark font-black">
             {{ shop.name }}
@@ -39,7 +39,7 @@
             {{ getAddressString() }}
           </p>
         </div>
-        <div v-if="selected" class="flex sm:w-1/2 items-center">
+        <div v-if="selected" class="flex pl-2 sm:w-1/2 items-center">
           <div class="flex flex-auto">
             <a
               v-if="selected"
