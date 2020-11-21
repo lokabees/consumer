@@ -8,7 +8,7 @@
       </div>
       <div class="lg:flex">
         <!--list all shops-->
-        <div class="w-full lg:w-1/2 p-5">
+        <div class="w-full lg:w-1/2 p-2">
           <ShopList
             :selected-shop="selectedShop"
             @search="flyTo($event)"

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- search bar -->
-    <FormulateForm class="p-2" @submit="search">
+    <FormulateForm @submit="search">
       <div class="flex w-full">
         <FormulateInput
           v-model="searchString"
@@ -19,9 +19,7 @@
       </div>
     </FormulateForm>
     <!-- shop list -->
-    <div
-      class="grid grid-flow-row-dense overflow-hidden sm:grid-cols-2 p-2 gap-2"
-    >
+    <div class="grid grid-flow-row-dense overflow-hidden sm:grid-cols-2 gap-2">
       <div v-if="shopList().length === 0">
         <span>{{ $t('landing_page.shop_list.no_shops') }}</span>
       </div>
