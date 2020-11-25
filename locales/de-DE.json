@@ -9,8 +9,8 @@
     "name_label": "Name",
     "name_placeholder": "Erna Birnbaum",
     "submit_label": "Lokabees kontaktieren",
-    "success": "Danke für eine Kontaktaufnahme!",
-    "text_label": "Wie können wir dir helfen?",
+    "success": "Danke für Deine Kontaktaufnahme!",
+    "text_label": "Wie können wir Dir helfen?",
     "text_placeholder": "Deine Nachricht...",
     "title": "Kontaktiere uns!"
   },
@@ -37,7 +37,7 @@
       "title": "Über Lokabees"
     },
     "contact": {
-      "button": "Meld dich zu unserem Newsletter an",
+      "button": "Meld Dich zu unserem Newsletter an",
       "placeholder": "Deine Emailadresse",
       "text": "Bleib mit unserem Newsletter auf dem Laufenden über neue Funktionen, neue Geschäfte, lokale Updates und mehr!",
       "title": "Lass uns in Kontakt bleiben"
@@ -54,10 +54,10 @@
       "show_more": "mehr anzeigen +"
     },
     "sponsors": {
-      "subtext": "Würdest du uns gerne unterstützen? Schick uns eine Email:",
+      "subtext": "Würdest Du uns gerne unterstützen? Schick uns eine Email:",
       "title": "Wir werden unterstützt von"
     },
-    "title": "Finde lokale Produkte von Läden in deiner Nähe"
+    "title": "Finde lokale Produkte von Läden in Deiner Nähe"
   },
   "navbar": {
     "login": "Anmelden"
