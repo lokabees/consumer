@@ -8,7 +8,7 @@
     },
     "name_label": "Name",
     "name_placeholder": "Isabelle Mademoiselle",
-    "submit_label": "Contact lokabees",
+    "submit_label": "Contact Lokabees",
     "success": "Thanks for reaching out!",
     "text_label": "How can we help you?",
     "text_placeholder": "Write your message here...",
@@ -45,7 +45,7 @@
     "shop_list": {
       "back_to_map": "Back to the map",
       "call": "Call",
-      "email": "E-Mail",
+      "email": "Email",
       "go_to_store": "Go to store",
       "no_shops": "We have not found any shops in this area :-( Feel free to ask local shop owners to register their shop on lokabees.",
       "open_until": "Open until",
@@ -60,7 +60,7 @@
     "title": "find local products from retails near to you"
   },
   "navbar": {
-    "login": "Login"
+    "login": "Log in"
   },
   "shop": {
     "address": "Address",
