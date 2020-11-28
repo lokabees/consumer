@@ -1,7 +1,83 @@
 {
-  "landing_page": {
-    "sponsors": {
-      "title": "Unsere Partner"
+  "contact": {
+    "close": "schliessen",
+    "email_label": "Email",
+    "email_placeholder": "bartsimpson@springfield.com",
+    "errors": {
+      "internal": "Entschuldigung, da ist irgendetwas schief gegangen."
+    },
+    "name_label": "Name",
+    "name_placeholder": "Erna Birnbaum",
+    "submit_label": "Lokabees kontaktieren",
+    "success": "Danke für Deine Kontaktaufnahme!",
+    "text_label": "Wie können wir Dir helfen?",
+    "text_placeholder": "Deine Nachricht...",
+    "title": "Kontaktiere uns!"
+  },
+  "cookies_consent": {
+    "accept": "Akzeptieren",
+    "more_info": "Hier kannst Du mehr Informationen darüber finden wie wir Cookies benutzen: ",
+    "privacy": "Datenschutzerklärung",
+    "text": "Auf unserer Website verwenden wir Cookies. Einige von ihnen sind unerlässlich, während andere uns helfen, diese Website und Dein Nutzungserlebnis zu verbessern."
+  },
+  "footer": {
+    "links": {
+      "contact": "Kontakt",
+      "imprint": "Impressum",
+      "privacy": "Datenschutzerklärung",
+      "terms": "Nutzungsbedingungen"
     }
+  },
+  "general": {
+    "ok": "Okay"
+  },
+  "landing_page": {
+    "about": {
+      "text": "Lokabees - die Initiative für eine farbenfrohe Nachbarschaft und die Digitalisierung des lokalen Einzelhandels. Das Team besteht aus rund 20 engagierten Spezialisten aus den Bereichen Entwicklung, User Experience, Marketing und Business Development sowie zahlreichen weiteren Unterstützern, die gemeinsam an Lokabees arbeiten.",
+      "title": "Über Lokabees"
+    },
+    "contact": {
+      "button": "Meld Dich zu unserem Newsletter an",
+      "placeholder": "Deine Emailadresse",
+      "text": "Bleib mit unserem Newsletter auf dem Laufenden über neue Funktionen, neue Geschäfte, lokale Updates und mehr!",
+      "title": "Lass uns in Kontakt bleiben"
+    },
+    "shop_list": {
+      "back_to_map": "Zurück zur Karte",
+      "call": "Anruf",
+      "email": "Email",
+      "go_to_store": "Zum Laden gehen",
+      "no_shops": "Wir haben in dieser Gegend keine Geschäfte gefunden :-( Bitte die örtlichen Ladenbesitzer, ihr Geschäft auf Lokabees zu registrieren.",
+      "open_until": "geöffnet bis",
+      "search": "Suchen",
+      "search_placeholder": "Gib einen Ort ein",
+      "show_more": "mehr anzeigen +"
+    },
+    "sponsors": {
+      "subtext": "Würdest Du uns gerne unterstützen? Schick uns eine Email:",
+      "title": "Wir werden unterstützt von"
+    },
+    "title": "Finde lokale Produkte von Läden in Deiner Nähe"
+  },
+  "navbar": {
+    "login": "Anmelden"
+  },
+  "shop": {
+    "address": "Adresse",
+    "call": "Anruf",
+    "closed": "geschlossen",
+    "delivery": "Lieferung",
+    "hide_details": "Details ausblenden",
+    "now_closed": "geschlossen",
+    "now_open": "geöffnet",
+    "no_products": "Leider hat der Ladeninhaber noch keine Produkte angelegt",
+    "open_today": "heute geöffnet",
+    "pickup": "Abholung",
+    "product_highlights": "Produkt-Highlights",
+    "send_msg": "Absenden",
+    "ship": "Liefern",
+    "show_details": "mehr anzeigen",
+    "website": "Webseite",
+    "whatsapp": "WhatsApp"
   }
 }

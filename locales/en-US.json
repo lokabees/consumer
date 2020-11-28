@@ -39,7 +39,7 @@
     }
   },
   "general": {
-    "ok": "Ok"
+    "ok": "Okay"
   },
   "landing_page": {
     "about": {
@@ -55,7 +55,7 @@
     "shop_list": {
       "back_to_map": "Back to the map",
       "call": "Call",
-      "email": "E-Mail",
+      "email": "Email",
       "go_to_store": "Go to store",
       "no_shops": "We have not found any shops in this area :-( Feel free to ask local shop owners to register their shop on lokabees.",
       "open_until": "Open until",
