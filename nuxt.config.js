@@ -37,9 +37,11 @@ export default {
   publicRuntimeConfig: {
     formSpreeURL: process.env.FORMSPREE_URL,
     mapboxKey: process.env.MAPBOX_KEY,
+    ctfSpaceId: process.env.CTF_SPACE_ID,
+    ctfToken: process.env.CTF_CDA_ACCESS_TOKEN,
+    appUrl: process.env.APP_URL,
   },
   privateRuntimeConfig: {
-    ctfAccessTokem: process.env.CTF_CDA_ACCESS_TOKEN,
     ctfSpaceId: process.env.CTF_SPACE_ID,
   },
   /*
@@ -53,6 +55,7 @@ export default {
   plugins: [
     '~/plugins/modules/i18n',
     '~/plugins/modules/vue-formulate',
+    '~/plugins/modules/contentful',
     '~/plugins/services/error-handler',
     { src: '~/plugins/modules/eva-icons', ssr: false },
     { src: '~/plugins/modules/eva-icons', ssr: false },

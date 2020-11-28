@@ -1,13 +1,9 @@
 <template>
-  <div class="flex flex-col min-h-screen">
+  <div class="flex flex-col min-h-screen bg-primary-lightest">
+    <Navigation class="md:block sticky top-0 z-30 bg-primary-lightest" />
+    <Nuxt class="h-full" />
+    <Footer class="mt-auto" />
     <ErrorModal />
-    <navigation class="md:block sticky top-0 z-30" />
     <CookiesConsent />
-    <nuxt />
-    <Footer />
-    <!--  <navbar class="block md:hidden fixed bottom-0 w-full" />-->
   </div>
 </template>
-<script>
-export default {}
-</script>

@@ -49,6 +49,7 @@ export default {
     }),
     selectShop(shop) {
       this.selectShopInStore(shop)
+      if (process.browser) window.scrollTo(0, 0)
     },
     async viewChanged({ geometry: { coordinates } }) {
       const position = {

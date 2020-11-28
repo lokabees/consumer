@@ -8,7 +8,7 @@
       </div>
       <div class="lg:flex">
         <!--list all shops-->
-        <div class="w-full lg:w-1/2 p-5">
+        <div class="w-full lg:w-1/2 p-2">
           <ShopList
             :selected-shop="selectedShop"
             @search="flyTo($event)"
@@ -18,6 +18,7 @@
         <div class="w-full lg:w-1/2">
           <no-ssr>
             <Map
+              :class="{ 'no-pointer': map.tap }"
               class="map"
               :token="$config.mapboxKey"
               :shops="shops"
@@ -122,6 +123,8 @@ export default {
 
 .map {
   min-height: 500px;
+}
+.no-pointer {
   pointer-events: none;
 }
 </style>

@@ -17,7 +17,9 @@
         </div>
       </div>
 
-      <div class="flex md:flex-none w-full justify-items-center">
+      <div
+        class="flex md:flex-none w-full justify-items-center bg-primary-lightest"
+      >
         <div
           class="mx-auto relative md:absolute md:bottom-0 md:left-20 bg-white border-4 border-white md:-mb-16 -mb-5 w-2/3 md:w-1/3 md:pb-1/5 pb-1/3 -mt-1/4"
         >
@@ -54,8 +56,7 @@
         <div class="md:w-1/2 py-3 mb-5">
           <div class="flex mt-5 mb-3">
             <div class="w-2/3 font-bold">
-              {{ $t('shop.open_today') }}:
-              {{ getOpeningTime() || $t('shop.closed') }}
+              {{ shop.isOpen ? $t('shop.now_open') : $t('shop.now_closed') }}
             </div>
             <div
               v-for="deliveryOption in shop.delivery"
@@ -86,7 +87,10 @@
           </div>
 
           <div class="flex mt-8">
-            <a :href="`tel:${shop.contact.phone}`">
+            <a
+              :class="{ 'pointer-events-none': !shop.contact.phone }"
+              :href="`tel:${shop.contact.phone}`"
+            >
               <button
                 :class="{ disabled: !shop.contact.phone }"
                 class="bg-primary text-white flex mr-2"
@@ -99,7 +103,12 @@
                 />
               </button>
             </a>
-            <a :href="`mailto:${shop.contact.email}`" target="_blank">
+
+            <a
+              :class="{ 'pointer-events-none': !shop.contact.email }"
+              :href="`mailto:${shop.contact.email}`"
+              target="_blank"
+            >
               <button
                 :class="{ disabled: !shop.contact.email }"
                 class="bg-primary text-white flex ml-2"
@@ -208,11 +217,13 @@ export default {
   },
   computed: {
     coverImage() {
-      if (this.shop?.images?.cover?.url === 'cdn-link') return null
+      if (this.shop?.images?.cover?.url === 'cdn-link')
+        return '/img/shop/cover_placeholder.jpg'
       return this.shop?.images?.cover?.url
     },
     profileImage() {
-      if (this.shop?.images?.profile?.url === 'cdn-link') return null
+      if (this.shop?.images?.profile?.url === 'cdn-link')
+        return '/img/shop/profile_placeholder.jpg'
       return this.shop?.images?.profile?.url
     },
   },
@@ -223,27 +234,6 @@ export default {
     getAddressString() {
       const { postcode, city, street, number } = this.shop.address
       return `${street} ${number}, ${postcode} ${city}`
-    },
-    getOpeningTime() {
-      const date = new Date()
-      const day = date.getDay()
-      const weekdays = [
-        'sunday',
-        'monday',
-        'tuesday',
-        'wednesday',
-        'thursday',
-        'friday',
-        'saturday',
-      ]
-      const weekday = weekdays[day]
-      const { open, close } = this.shop.openingHours[weekday]
-
-      // TODO breaks
-
-      return open !== 'NaN:NaN' && close !== 'NaN:NaN'
-        ? `${open}-${close}`
-        : null
     },
   },
 }

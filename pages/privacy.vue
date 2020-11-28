@@ -1,6 +1,6 @@
 <template>
   <div class="container prose mb-5 mt-5 md:mt-24">
-    <div class="card w-full markdown-body">
+    <div class="card w-full markdown-body p-2">
       <div v-if="content.content" v-html="$md.render(content.content)"></div>
       <div
         v-if="content.contentMore"
@@ -11,14 +11,11 @@
 </template>
 
 <script>
-import { createClient } from '~/plugins/modules/contentful.server.js'
-const client = createClient()
-
 export default {
   name: 'Privacy',
-  async asyncData({ params, $config, $errorHandler }) {
+  async asyncData({ $errorHandler, $contentful }) {
     try {
-      const { fields } = await client.getEntry('49J54qlvRwgiHzdXm0qlKU')
+      const { fields } = await $contentful('49J54qlvRwgiHzdXm0qlKU')
       return { content: fields }
     } catch (error) {
       $errorHandler(error)

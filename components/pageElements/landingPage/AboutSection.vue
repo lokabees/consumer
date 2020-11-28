@@ -3,9 +3,9 @@
     <div class="container p-10">
       <div class="md:flex items-center">
         <div class="md:w-1/2 md:pr-2">
-          <div class="relative pb-3/5 md:px-4">
+          <div class="relative pb-3/5 md:px-4 max-w-md">
             <img
-              class="absolute topt-0 left-0 h-full w-full object-cover"
+              class="absolute topt-0 left-0 h-full w-full object-contain"
               src="/img/landing-page/map-about.svg"
             />
           </div>
