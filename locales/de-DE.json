@@ -1,7 +1,7 @@
 {
   "contact": {
-    "close": "schliessen",
-    "email_label": "Email",
+    "close": "Schliessen",
+    "email_label": "E-Mail",
     "email_placeholder": "bartsimpson@springfield.com",
     "errors": {
       "internal": "Entschuldigung, da ist irgendetwas schief gegangen."
@@ -18,7 +18,7 @@
     "accept": "Akzeptieren",
     "more_info": "Hier kannst Du mehr Informationen darüber finden wie wir Cookies benutzen: ",
     "privacy": "Datenschutzerklärung",
-    "text": "Auf unserer Website verwenden wir Cookies. Einige von ihnen sind unerlässlich, während andere uns helfen, diese Website und Dein Nutzungserlebnis zu verbessern."
+    "text": "Wir benutzen Cookies, um Dir eine bessere Erfahrung zu bieten. "
   },
   "footer": {
     "links": {
@@ -38,17 +38,17 @@
     },
     "contact": {
       "button": "Meld Dich zu unserem Newsletter an",
-      "placeholder": "Deine Emailadresse",
+      "placeholder": "Deine E-Mail-Adresse",
       "text": "Bleib mit unserem Newsletter auf dem Laufenden über neue Funktionen, neue Geschäfte, lokale Updates und mehr!",
-      "title": "Lass uns in Kontakt bleiben"
+      "title": "Lass uns in Kontakt bleiben!"
     },
     "shop_list": {
       "back_to_map": "Zurück zur Karte",
-      "call": "Anruf",
-      "email": "Email",
+      "call": "Anrufen",
+      "email": "E-Mail",
       "go_to_store": "Zum Laden gehen",
-      "no_shops": "Wir haben in dieser Gegend keine Geschäfte gefunden :-( Bitte die örtlichen Ladenbesitzer, ihr Geschäft auf Lokabees zu registrieren.",
-      "open_until": "geöffnet bis",
+      "no_shops": "In dieser Gegend haben sich noch keine Läden bei Lokabees registriert. Kontaktiere uns via hello@lokabees.com wenn du einen bestimmten Laden in deiner Nähe gerne auf lokabees.de sehen würdest.",
+      "open_until": "Geöffnet bis",
       "search": "Suchen",
       "search_placeholder": "Gib einen Ort ein",
       "show_more": "mehr anzeigen +"
@@ -65,13 +65,14 @@
   "shop": {
     "address": "Adresse",
     "call": "Anruf",
-    "closed": "geschlossen",
+    "closed": "Geschlossen",
     "delivery": "Lieferung",
     "hide_details": "Details ausblenden",
-    "now_closed": "geschlossen",
-    "now_open": "geöffnet",
-    "no_products": "Leider hat der Ladeninhaber noch keine Produkte angelegt",
-    "open_today": "heute geöffnet",
+    "now_closed": "Geschlossen",
+    "now_open": "Geöffnet",
+    "no_products": "Leider hat der Ladeninhaber noch keine Produkte hinzugefügt.",
+    "open_today": "Heute geöffnet",
+
     "pickup": "Abholung",
     "product_highlights": "Produkt-Highlights",
     "send_msg": "Absenden",

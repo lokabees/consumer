@@ -1,14 +1,4 @@
 {
-  "error": {
-    "continue_home": "You can continue on our homepage or try reloading the page again.",
-    "error_occured": "Ups. An error occured.",
-    "errors": {
-      "500": "An unknown error occured. Try reloading the page and login again.",
-      "504": "We can not reach the server. Please try again later or report the issue to hello@lokabees.com",
-      "unspecific": "Ups. Something went wrong. Please try again or contact our support if the request keeps failing."
-    },
-    "go_home": "Go to Homepage"
-  },
   "contact": {
     "close": "Close",
     "email_label": "Email",
@@ -21,14 +11,14 @@
     "submit_label": "Contact Lokabees",
     "success": "Thanks for reaching out!",
     "text_label": "How can we help you?",
-    "text_placeholder": "Write your message here ...",
+    "text_placeholder": "Write your message here...",
     "title": "Contact us!"
   },
   "cookies_consent": {
     "accept": "Accept",
     "more_info": "You can find more information on how we use cookies in our ",
     "privacy": "Privacy Policy",
-    "text": "We use cookies on our website. Some of them are essential, while others help us to improve this website and your experience."
+    "text": "We use cookies to provide you a better experience."
   },
   "footer": {
     "links": {
@@ -43,21 +33,21 @@
   },
   "landing_page": {
     "about": {
-      "text": "Lokabees - the initiative for a colorful neighborhood and the digitization of local retail. The team consists of around 20 committed specialists from the areas of development, UX design, marketing and business development as well as numerous other supporters who work together on lokabees.",
+      "text": "Lokabees - the initiative for a colorful neighborhood and the digitization of local retail. The team consists of around 20 committed specialists from the areas of development, User Experience, marketing and business development as well as numerous other supporters who work together on lokabees.",
       "title": "About Lokabees"
     },
     "contact": {
       "button": "Join the newsletter",
       "placeholder": "Your email address",
-      "text": "Stay updated for new features, new shops, local updates and more with our newsletter!",
-      "title": "Let's stay in contact"
+      "text": "Get the latest infos about new features, new shops, local updates and more by joining our newsletter!",
+      "title": "Let's stay in contact!"
     },
     "shop_list": {
       "back_to_map": "Back to the map",
       "call": "Call",
       "email": "Email",
       "go_to_store": "Go to store",
-      "no_shops": "We have not found any shops in this area :-( Feel free to ask local shop owners to register their shop on lokabees.",
+      "no_shops": "No stores in this area have signed up to Lokabees yet. Contact us via hello@lokabees.com if you would like to see a particular store in your area on lokabees.de.",
       "open_until": "Open until",
       "search": "Search",
       "search_placeholder": "Enter a location",
@@ -67,12 +57,10 @@
       "subtext": "Would you like to offer your support? Email us:",
       "title": "Our sponsors"
     },
-    "title": "Find local products from retailers near you!"
+    "title": "find local products from retails near to you"
   },
   "navbar": {
-    "login": "Login",
-    "shop_owners": "Shop owners",
-    "register_shop": "Register shop"
+    "login": "Log in"
   },
   "shop": {
     "address": "Address",
@@ -82,7 +70,7 @@
     "hide_details": "Hide details",
     "now_closed": "Closed now",
     "now_open": "Open now",
-    "no_products": "Unfortunately, the shop owner did not upload any products yet.",
+    "no_products": "Unfortunately the shop owner has not added any products yet.",
     "open_today": "Open today",
     "pickup": "Pickup",
     "product_highlights": "Product Highlights",
