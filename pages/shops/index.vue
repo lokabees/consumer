@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-4xl">
+  <div class="container max-w-4xl px-2">
     <ShopList
       :selected-shop="selectedShop"
       @search="viewChanged($event)"

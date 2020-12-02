@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-2xl py-8">
+  <div class="container max-w-2xl py-8 px-2">
     <Modal :visible="isVisible" :message="$t('contact.success')">
       <template v-slot:buttons>
         <button @click="isVisible = false">{{ $t('contact.close') }}</button>
