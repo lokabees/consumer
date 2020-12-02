@@ -1,7 +1,7 @@
 <template>
   <div
     v-click-outside="unselectShop"
-    class="col-span-2 sm:col-span-1 focus:bg-primary"
+    class="col-span-2 sm:col-span-1"
     :class="{ active: selected }"
     tabindex="1"
     @click="selectShop"
