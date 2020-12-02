@@ -23,12 +23,13 @@
       <div v-if="shopList().length === 0">
         <span>{{ $t('landing_page.shop_list.no_shops') }}</span>
       </div>
+
       <ShopSearchResult
         v-for="shop in shopList()"
         :key="shop._id"
         :shop="shop"
         :selected="shop._id === selectedShop._id"
-        @selectShop="$emit('selectShop', shop)"
+        @selectShop="$emit('selectShop', $event)"
       />
     </div>
     <div class="flex py-4">
