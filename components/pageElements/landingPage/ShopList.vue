@@ -12,7 +12,10 @@
           validation="required"
         />
         <FormulateInput
-          class="pl-1"
+          :class="{ 'spinner-dark': searching }"
+          element-class="h-full flex"
+          wrapper-class="h-full"
+          input-class="my-4 button bg-grey-dark text-white w-full hide-on-spinner"
           type="submit"
           :label="$t('landing_page.shop_list.search')"
         />
@@ -23,12 +26,13 @@
       <div v-if="shopList().length === 0">
         <span>{{ $t('landing_page.shop_list.no_shops') }}</span>
       </div>
+
       <ShopSearchResult
         v-for="shop in shopList()"
         :key="shop._id"
         :shop="shop"
         :selected="shop._id === selectedShop._id"
-        @selectShop="$emit('selectShop', shop)"
+        @selectShop="$emit('selectShop', $event)"
       />
     </div>
     <div class="flex py-4">
@@ -50,6 +54,7 @@ import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
+      searching: false,
       searchString: null,
       shopSelected: false,
     }
@@ -61,12 +66,15 @@ export default {
     async search({ search }) {
       if (!search || search === 'null') return
       try {
+        this.searching = true
         const location = await this.$axios.$get('/api/maps/suggest', {
           params: { q: search },
         })
         this.$emit('search', location)
+        this.searching = false
       } catch (e) {
         console.error(e)
+        this.searching = false
       }
     },
     shopList() {
@@ -87,3 +95,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.spinner-dark .hide-on-spinner {
+  @apply text-grey-dark;
+}
+</style>

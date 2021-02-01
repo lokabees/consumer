@@ -77,6 +77,7 @@ export default {
     }),
     selectShop(shop) {
       this.selectShopInStore(shop)
+      if (!shop) return
       if (Object.keys(this.map).length > 0) this.flyTo(shop.address, 15)
     },
     onMapLoad({ map }) {

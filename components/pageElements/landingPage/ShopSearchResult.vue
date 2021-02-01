@@ -1,7 +1,9 @@
 <template>
   <div
+    v-click-outside="unselectShop"
     class="col-span-2 sm:col-span-1"
     :class="{ active: selected }"
+    tabindex="1"
     @click="selectShop"
   >
     <div>
@@ -17,7 +19,15 @@
             :src="coverImage"
             class="absolute top-0 left-0 h-full object-cover w-full rounded-lg"
           />
+          <div v-if="!selected" class="flex absolute top-0 right-0 z-10">
+            <span class="ml-auto bg-primary-lighter p-1 rounded-md">
+              {{
+                shop.isOpen ? $t('shop.now_open') : $t('shop.now_closed')
+              }}</span
+            >
+          </div>
         </div>
+
         <div v-if="selected" class="sm:w-1/2 overflow-hidden">
           <div class="flex">
             <span class="ml-auto bg-primary-lighter p-1 rounded-md">
@@ -104,7 +114,11 @@
 </template>
 
 <script>
+import ClickOutside from 'vue-click-outside'
 export default {
+  directives: {
+    ClickOutside,
+  },
   props: {
     shop: {
       type: Object,
@@ -154,6 +168,9 @@ export default {
     },
     selectShop() {
       if (!this.selected) this.$emit('selectShop', this.shop)
+    },
+    unselectShop() {
+      if (this.selected) this.$emit('selectShop', null)
     },
     getDescription() {
       if (!this.shop || !this.shop.description) return

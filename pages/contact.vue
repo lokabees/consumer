@@ -1,6 +1,10 @@
 <template>
-  <div class="container max-w-2xl py-8">
-    <Modal :visible="isVisible" :message="$t('contact.success')">
+  <div class="container max-w-2xl py-8 px-2">
+    <Modal
+      :visible="isVisible"
+      :message="$t('contact.success')"
+      @close="isVisible = false"
+    >
       <template v-slot:buttons>
         <button @click="isVisible = false">{{ $t('contact.close') }}</button>
       </template>
@@ -38,7 +42,7 @@ export default {
   data() {
     return {
       contact: {},
-      isVisible: false,
+      isVisible: true,
     }
   },
   methods: {

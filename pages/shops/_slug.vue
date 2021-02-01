@@ -55,9 +55,6 @@
         </div>
         <div class="md:w-1/2 py-3 mb-5">
           <div class="flex mt-5 mb-3">
-            <div class="w-2/3 font-bold">
-              {{ shop.isOpen ? $t('shop.now_open') : $t('shop.now_closed') }}
-            </div>
             <div
               v-for="deliveryOption in shop.delivery"
               :key="deliveryOption"
@@ -121,6 +118,31 @@
                 />
               </button>
             </a>
+          </div>
+
+          <div
+            class="mt-5 text-primary cursor-pointer text-sm font-bold"
+            @click="showOpeningHours = !showOpeningHours"
+          >
+            {{ shop.isOpen ? $t('shop.now_open') : $t('shop.now_closed') }}
+            {{ showOpeningHours ? '-' : '+' }}
+          </div>
+          <div v-if="showOpeningHours">
+            <div
+              v-for="(hours, day) in shop.openingHours"
+              :key="day"
+              class="flex text-sm"
+              :class="{ 'font-bold': isToday(day) }"
+            >
+              <div class="w-1/2 sm:w-1/3´">{{ $t(`shop.days.${day}`) }}</div>
+              <div>
+                {{
+                  hours.open
+                    ? `${hours.open}-${hours.close}`
+                    : $t('shop.now_closed')
+                }}
+              </div>
+            </div>
           </div>
 
           <div>
@@ -199,6 +221,7 @@ export default {
   data() {
     return {
       showDetails: false,
+      showOpeningHours: false,
       deliveryOptions: {
         LD: {
           name: 'shop.delivery',
@@ -234,6 +257,20 @@ export default {
     getAddressString() {
       const { postcode, city, street, number } = this.shop.address
       return `${street} ${number}, ${postcode} ${city}`
+    },
+    isToday(day) {
+      const date = new Date()
+      const today = date.getDay()
+      const days = [
+        'sunday',
+        'monday',
+        'tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+      ]
+      return days[today] === day
     },
   },
 }
