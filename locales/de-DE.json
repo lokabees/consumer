@@ -60,7 +60,8 @@
     "title": "Finde lokale Produkte von Läden in Deiner Nähe"
   },
   "navbar": {
-    "login": "Anmelden"
+    "login": "Anmelden",
+    "register_shop": "Hier Anmelden"
   },
   "shop": {
     "address": "Adresse",
@@ -72,7 +73,6 @@
     "now_open": "Geöffnet",
     "no_products": "Leider hat der Ladeninhaber noch keine Produkte hinzugefügt.",
     "open_today": "Heute geöffnet",
-
     "pickup": "Abholung",
     "product_highlights": "Produkt-Highlights",
     "send_msg": "Absenden",

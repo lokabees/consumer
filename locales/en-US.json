@@ -60,7 +60,8 @@
     "title": "find local products from retails near to you"
   },
   "navbar": {
-    "login": "Log in"
+    "login": "Login",
+    "register_shop": "Register or Login"
   },
   "shop": {
     "address": "Address",
