@@ -27,10 +27,17 @@ export const actions = {
     console.log('swGeohash:' + southwestgeohash)
     console.log('neGeohash:' + northeastgeohash)
     if (southwestgeohash || northeastgeohash) {
+      console.log('here i am')
       const { rows: shops } = await this.$axios.$get(
-        `/api/shops/within/${southwestgeohash}/${southwestgeohash}`
+        `/api/shops/within/${southwestgeohash}/${northeastgeohash}`
       )
       commit('setShops', shops)
+      // select shop
+      const selectedShop =
+        shops.filter((e) => e._id === state.selectedShop._id).length > 0
+          ? state.selectedShop
+          : null
+      commit('selectShop', selectedShop)
     }
     const { rows: shops } = await this.$axios.$get(
       `/api/shops/near/${geohash}`,
