@@ -38,21 +38,22 @@ export const actions = {
           ? state.selectedShop
           : null
       commit('selectShop', selectedShop)
-    }
-    const { rows: shops } = await this.$axios.$get(
-      `/api/shops/near/${geohash}`,
-      {
-        params: { zoom },
-      }
-    )
-    commit('setShops', shops)
+    } else {
+      const { rows: shops } = await this.$axios.$get(
+        `/api/shops/near/${geohash}`,
+        {
+          params: { zoom },
+        }
+      )
+      commit('setShops', shops)
 
-    // select shop
-    const selectedShop =
-      shops.filter((e) => e._id === state.selectedShop._id).length > 0
-        ? state.selectedShop
-        : null
-    commit('selectShop', selectedShop)
+      // select shop
+      const selectedShop =
+        shops.filter((e) => e._id === state.selectedShop._id).length > 0
+          ? state.selectedShop
+          : null
+      commit('selectShop', selectedShop)
+    }
   },
 }
 
