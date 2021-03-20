@@ -28,29 +28,28 @@ export const actions = {
     console.log('neGeohash:' + northeastgeohash)
     if (southwestgeohash || northeastgeohash) {
       const { rows: shops } = await this.$axios.$get(
-        `/api/shops/within/${southwestgeohash}/${northeastgeohash}`
+        `/api/shops/within/${southwestgeohash}/${southwestgeohash}`
       )
       commit('setShops', shops)
-      // select shop
-      const selectedShop =
-        shops.filter((e) => e._id === state.selectedShop._id).length > 0
-          ? state.selectedShop
-          : null
-      commit('selectShop', selectedShop)
-    } else {
-      const { rows: shops } = await this.$axios.$get(
-        `/api/shops/near/${geohash}`,
-        {
-          params: { zoom },
-        }
-      )
-      commit('setShops', shops)
-      // select shop
-      const selectedShop =
-        shops.filter((e) => e._id === state.selectedShop._id).length > 0
-          ? state.selectedShop
-          : null
-      commit('selectShop', selectedShop)
     }
+    const { rows: shops } = await this.$axios.$get(
+      `/api/shops/near/${geohash}`,
+      {
+        params: { zoom },
+      }
+    )
+    commit('setShops', shops)
+
+    // select shop
+    const selectedShop =
+      shops.filter((e) => e._id === state.selectedShop._id).length > 0
+        ? state.selectedShop
+        : null
+    commit('selectShop', selectedShop)
   },
+}
+
+export const getters = {
+  shops: (state) => state.shops,
+  selectedShop: (state) => state.selectedShop,
 }
