@@ -8,6 +8,12 @@ export const state = () => ({
       geohash: 'u1r3rd9r4t6',
       zoom: 12,
       name: null,
+      swLatitude: 50.361319072409344,
+      swLongitude: 8.437194824220597,
+      neLatitude: 52.08127728275616,
+      neLongitude: 11.749572753908495,
+      southwestgeohash: 'u0vyrzzzb',
+      northeastgeohash: 'u322735g2',
     },
   },
   locales: [
@@ -25,14 +31,34 @@ export const state = () => ({
 })
 
 export const mutations = {
-  setPosition(state, { latitude, longitude, name, zoom }) {
+  setPosition(
+    state,
+    {
+      latitude,
+      longitude,
+      name,
+      zoom,
+      swLatitude,
+      swLongitude,
+      neLatitude,
+      neLongitude,
+    }
+  ) {
+    console.log('swLatitude' + swLatitude)
+    console.log('swLongitude' + swLongitude)
+    console.log('neLatitude' + neLatitude)
+    console.log('neLongitude' + neLongitude)
     const userGeohash = geohash.encode(latitude, longitude)
+    const swGeohash = geohash.encode(swLatitude, swLongitude)
+    const neGeohash = geohash.encode(neLatitude, neLongitude)
     state.position.selectedMapPosition = {
       latitude,
       longitude,
       zoom,
       geohash: userGeohash,
       name,
+      southwestgeohash: swGeohash,
+      northeastgeohash: neGeohash,
     }
   },
 }

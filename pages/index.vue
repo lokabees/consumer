@@ -107,9 +107,13 @@ export default {
         longitude: center.lng,
         zoom: target.getZoom(),
         name: '',
+        swLatitude: this.map.getBounds().getSouthWest().lat,
+        swLongitude: this.map.getBounds().getSouthWest().lng,
+        neLatitude: this.map.getBounds().getNorthEast().lat,
+        neLongitude: this.map.getBounds().getNorthEast().lng,
       }
-
       this.setPosition(position)
+
       try {
         await this.getShops()
       } catch (error) {
