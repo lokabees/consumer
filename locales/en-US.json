@@ -68,7 +68,13 @@
     "call": "Call",
     "closed": "Closed",
     "days": {
-      "monday": "Monday"
+      "friday": "Friday",
+      "monday": "Monday",
+      "saturday": "Saturday",
+      "Sunday": "Sunday",
+      "thursday": "Thursday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday"
     },
     "delivery": "Delivery",
     "hide_details": "Hide details",
