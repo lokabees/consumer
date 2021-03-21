@@ -68,7 +68,13 @@
     "call": "Anruf",
     "closed": "Geschlossen",
     "days": {
-      "monday": "Montag"
+      "friday": "Freitag",
+      "monday": "Montag",
+      "saturday": "Samstag",
+      "Sunday": "Sonntag",
+      "thursday": "Donnerstag",
+      "tuesday": "Dienstag",
+      "wednesday": "Mittwoch"
     },
     "delivery": "Lieferung",
     "hide_details": "Details ausblenden",
