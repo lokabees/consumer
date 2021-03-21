@@ -26,7 +26,8 @@ export const actions = {
     } = position?.selectedMapPosition
     console.log('swGeohash:' + southwestgeohash)
     console.log('neGeohash:' + northeastgeohash)
-    if (southwestgeohash || northeastgeohash) {
+    const boolVal = false
+    if (boolVal || southwestgeohash || northeastgeohash) {
       const { rows: shops } = await this.$axios.$get(
         `/api/shops/within/${southwestgeohash}/${northeastgeohash}`
       )
