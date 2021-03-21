@@ -67,6 +67,9 @@
     "address": "Adresse",
     "call": "Anruf",
     "closed": "Geschlossen",
+    "days": {
+      "monday": "Montag"
+    },
     "delivery": "Lieferung",
     "hide_details": "Details ausblenden",
     "now_closed": "Geschlossen",
