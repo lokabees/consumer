@@ -60,13 +60,22 @@
     "title": "find local products from retails near to you"
   },
   "navbar": {
-    "login": "Login",
+    "login": "Log in",
     "register_shop": "Register or Login"
   },
   "shop": {
     "address": "Address",
     "call": "Call",
     "closed": "Closed",
+    "days": {
+      "friday": "Friday",
+      "monday": "Monday",
+      "saturday": "Saturday",
+      "sunday": "Sunday",
+      "thursday": "Thursday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday"
+    },
     "delivery": "Delivery",
     "hide_details": "Hide details",
     "now_closed": "Closed now",
