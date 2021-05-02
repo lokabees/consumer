@@ -9,7 +9,7 @@
       <div class="lg:flex">
         <!--list all shops-->
         <div class="w-full lg:w-1/2 p-2">
-          <ShopList
+          <PageElementsLandingPageShopList
             :selected-shop="selectedShop"
             @search="flyTo($event)"
             @selectShop="selectShop($event)"
@@ -17,7 +17,7 @@
         </div>
         <div class="w-full lg:w-1/2">
           <no-ssr>
-            <Map
+            <PageElementsLandingPageMap
               :class="{ 'no-pointer': map.tap }"
               class="map"
               :token="$config.mapboxKey"
@@ -31,13 +31,13 @@
       </div>
 
       <!--about section-->
-      <AboutSection />
+      <PageElementsLandingPageAboutSection />
 
       <!--sponsors section-->
-      <SponsorsSection />
+      <PageElementsLandingPageSponsorsSection />
 
       <!--contact section-->
-      <ContactSection />
+      <PageElementsLandingPageContactSection />
     </div>
   </div>
 </template>

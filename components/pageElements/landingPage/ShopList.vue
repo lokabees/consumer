@@ -27,7 +27,7 @@
         <span>{{ $t('landing_page.shop_list.no_shops') }}</span>
       </div>
 
-      <ShopSearchResult
+      <PageElementsLandingPageShopSearchResult
         v-for="shop in shopList()"
         :key="shop._id"
         :shop="shop"
