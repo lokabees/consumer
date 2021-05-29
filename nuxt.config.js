@@ -92,6 +92,16 @@ export default {
     '@nuxtjs/google-fonts',
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/markdownit
     '@nuxtjs/markdownit',
+    // Doc: https://github.com/nuxt-community/robots-module
+    [
+      '@nuxtjs/robots',
+      {
+        robots: {
+          UserAgent: '*',
+          Disallow: '/',
+        },
+      },
+    ],
   ],
   /**
    ** Markdown configuration
