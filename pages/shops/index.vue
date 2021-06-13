@@ -1,6 +1,6 @@
 <template>
   <div class="container max-w-4xl px-2">
-    <ShopList
+    <PageElementsLandingPageShopList
       :selected-shop="selectedShop"
       @search="viewChanged($event)"
       @selectShop="selectShop($event)"

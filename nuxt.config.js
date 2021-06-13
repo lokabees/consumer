@@ -1,3 +1,6 @@
+import en from './locales/en-US.json'
+import de from './locales/de-DE.json'
+
 export default {
   /*
    ** Nuxt rendering mode
@@ -16,15 +19,24 @@ export default {
   head: {
     title: 'Lokabees Consumer',
     meta: [
-      { charset: 'utf-8' },
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1, maximum-scale=5',
       },
       {
+        hid: 'charset',
+        name: 'charset',
+        content: 'utf-8',
+      },
+      {
         hid: 'description',
         name: 'description',
-        content: 'Shopverwaltung',
+        content: '',
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: '',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.png' }],
@@ -53,7 +65,7 @@ export default {
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
-    '~/plugins/modules/i18n',
+    // '~/plugins/modules/i18n',
     '~/plugins/modules/vue-formulate',
     '~/plugins/modules/contentful',
     '~/plugins/services/error-handler',
@@ -83,6 +95,37 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    // Doc: https://i18n.nuxtjs.org/
+    [
+      'nuxt-i18n',
+      {
+        baseUrl: (context) => {
+          return context.isDev
+            ? 'http://localhost:3000'
+            : (window && window.location) ||
+                'https://lokabees-consumer-dev.herokuapp.com'
+        },
+        locales: [
+          {
+            code: 'de',
+            iso: 'de-DE',
+          },
+          {
+            code: 'en',
+            iso: 'en-US',
+          },
+        ],
+        seo: false,
+        defaultLocale: 'de',
+        vueI18n: {
+          fallbackLocale: 'de',
+          messages: {
+            en,
+            de,
+          },
+        },
+      },
+    ],
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',

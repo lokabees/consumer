@@ -34,6 +34,7 @@
     "@nuxtjs/google-fonts": "^1.0.2",
     "@nuxtjs/markdownit": "^1.2.10",
     "@nuxtjs/pwa": "^3.0.2",
+    "@nuxtjs/robots": "^2.5.0",
     "@tailwindcss/typography": "^0.2.0",
     "@tailwindcss/ui": "^0.6.0",
     "contentful": "^7.14.8",
@@ -42,7 +43,8 @@
     "lodash": "^4.17.20",
     "mapbox-gl": "^1.12.0",
     "ngeohash": "^0.6.3",
-    "nuxt": "^2.14.5",
+    "nuxt": "^2.15.4",
+    "nuxt-i18n": "^6.27.0",
     "nuxt-webfontloader": "^1.1.0",
     "redirect-ssl": "^2.0.0",
     "tailwindcss-spinner": "^1.2.0",
@@ -72,10 +74,10 @@
     "lint-staged": "^10.3.0",
     "node-sass": "^4.14.1",
     "prettier": "^2.1.1",
-    "sass-loader": "^10.0.2",
-    "stylelint": "^13.7.1",
+    "sass-loader": "^10.1.1",
+    "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-standard": "^22.0.0",
     "webdriverio": "^6.4.7"
   }
 }

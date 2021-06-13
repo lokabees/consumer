@@ -16,7 +16,7 @@
           />
         </div>
         <div class="w-full lg:w-1/2">
-          <no-ssr>
+          <client-only>
             <PageElementsLandingPageMap
               :class="{ 'no-pointer': map.tap }"
               class="map"
@@ -26,7 +26,7 @@
               @load="onMapLoad($event)"
               @selectShop="selectShop($event)"
             />
-          </no-ssr>
+          </client-only>
         </div>
       </div>
 
